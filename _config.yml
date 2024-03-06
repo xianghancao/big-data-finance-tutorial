@@ -1,0 +1,16 @@
+# In _config.yml
+title: 金融大数据
+author: CXH
+logo: logo-min.png
+execute:
+  execute_notebooks: False
+
+# Add a bibtex file so that we can create citations
+# bibtex_bibfiles:
+#   - references.bib
+
+parse:
+  myst_enable_extensions:
+    - html_image
+    - dollarmath
+    - colon_fence
