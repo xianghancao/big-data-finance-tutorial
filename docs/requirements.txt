@@ -1,4 +1,5 @@
 jupyter-book
+pandas
 matplotlib
 numpy
 sphinx-inline-tabs

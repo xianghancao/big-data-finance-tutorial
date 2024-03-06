@@ -25,9 +25,30 @@ root: intro
 #     - file: 1_导论/作业.ipynb
 
 parts:
-- caption: 第一章 导论
+- caption: 第1章 导论
   chapters:
   - file: 1_导论/1.1_大数据的背景.ipynb
   - file: 1_导论/1.2_金融大数据的应用场景.ipynb
   - file: 1_导论/1.3_道德与法律.ipynb
   - file: 1_导论/作业.ipynb
+
+- caption: 第2章 Python编程基础
+  chapters:
+  - file: 2_Python编程基础/2.1_Python介绍与安装.ipynb
+  - file: 2_Python编程基础/2.2_关键字与标识符.ipynb
+  - file: 2_Python编程基础/2.3_变量与赋值.ipynb
+  - file: 2_Python编程基础/2.4_数据类型.ipynb
+  - file: 2_Python编程基础/2.5_数据结构.ipynb
+  - file: 2_Python编程基础/2.6_判断语句.ipynb
+  - file: 2_Python编程基础/2.7_循环语句.ipynb
+  - file: 2_Python编程基础/2.8_函数.ipynb
+  - file: 2_Python编程基础/2.9_模块和包.ipynb
+  - file: 2_Python编程基础/附录—面向对象编程.ipynb
+  - file: 2_Python编程基础/作业.ipynb
+  - file: 2_Python编程基础/附录—输入输出.ipynb
+  - file: 2_Python编程基础/附录—缩进和注释.ipynb
+  - file: 2_Python编程基础/附录—函数的参数.ipynb
+  - file: 2_Python编程基础/附录—更高效得编程.ipynb
+
+  
+  
