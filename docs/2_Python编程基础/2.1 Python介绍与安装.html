@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Python介绍与安装 &#8212; 金融大数据</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_Python编程基础/2.1 Python介绍与安装';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../%E9%A6%96%E9%A1%B5.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-min.png" class="logo__image only-light" alt="金融大数据 - Home"/>
+    <script>document.write(`<img src="../_static/logo-min.png" class="logo__image only-dark" alt="金融大数据 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../%E9%A6%96%E9%A1%B5.html">
+                    课程首页
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_Python编程基础/2.1 Python介绍与安装.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python介绍与安装</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. python语言的优势</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 我的职业经验</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 安装Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda">3.1 安装miniconda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">4. 激活Jupyterlab编程环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.1 进入命令行环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">4.1.1 如果你是Windows用户</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">4.1.2 如果你是macOS用户</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2 安装jupyterlab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">4.3 进入Jupyter编程环境</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.4 激活中文</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.5 如果遇到jupyterlab经常掉线</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5 如何使用课件</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.1 下载本课程课件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.2 用Jupyter打开课件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.3 Jupyter在教学中的应用</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python">
+<h1>Python介绍与安装<a class="headerlink" href="#python" title="Link to this heading">#</a></h1>
+<p>就像我们平时说话，人和人沟通是通过语言，我们称之为自然语言。</p>
+<p>人和计算机沟通也需要语言，我们称之为计算机语言。Python和我们听说的C语言，Java语言一样，也是一门计算机语言。</p>
+<section id="id1">
+<h2>1. python语言的优势<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p><img alt="python-logo" src="../_images/python-logo.png" /></p>
+<p>《Introduction to Python for Econometrics, Statistics and Data Analysis》描述了Python语言的优势：</p>
+<blockquote>
+<div><p>Python是一种流行的通用编程语言，它非常适合于各种各样的问题。
+你需要一种可以作为端到端解决方案的语言，以便从访问基于web的服务、数据库、数据处理和统计计算。这些都可以用同一种语言完成。</p>
+<ul class="simple">
+<li><p>数据处理和操作——特别是清洗和格式化</p></li>
+<li><p>在数据集的采集和构造上实质上比R或MATLAB更有优势。</p></li>
+<li><p>性能是一个问题，但不是最重要的。</p></li>
+<li><p>免费是一个重要的考虑因素——Python可以自由部署，甚至可以部署到100个服务器上计算集群或云(例如Amazon Web Services或Azure)。</p></li>
+<li><p>Python，作为通用语言，是R/MATLAB/Ox/GAUSS/Julia的补充。</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="id2">
+<h2>2. 我的职业经验<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>我开始接触python的时候，我就被她深深的吸引了。她拥有我之前学习过的编程语言绝大多数的优点，同时无需在多个语言上切换。</p>
+<p>我在之前的工作中，使用Python开发：</p>
+<ul class="simple">
+<li><p>网络数据的采集</p></li>
+<li><p>数据分析</p></li>
+<li><p>数据的可视化与建模</p></li>
+</ul>
+<p>所以，python在数据分析，系统开发和网站开发等都是可以胜任的，无需掌握过多的计算机语言。</p>
+</section>
+<section id="id3">
+<h2>3. 安装Python<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<section id="miniconda">
+<h3>3.1 安装miniconda<a class="headerlink" href="#miniconda" title="Link to this heading">#</a></h3>
+<p>要通过安装Miniconda来安装Python，你可以按照以下步骤进行操作：</p>
+<ol class="arabic simple">
+<li><p>下载miniconda：首先，访问Miniconda官方网站<a class="reference external" href="https://docs.conda.io/projects/miniconda/en/latest/">https://docs.conda.io/projects/miniconda/en/latest/</a> 并下载适用于你操作系统的Anaconda发行版。选择正确的版本，如Windows、macOS或Linux。</p></li>
+</ol>
+<p><img alt="miniconda" src="../_images/miniconda.png" /></p>
+<ol class="arabic simple" start="2">
+<li><p>执行安装程序：一旦下载完成，找到下载的安装程序并运行它。根据安装向导的指示，选择安装选项和安装目录。通常情况下，建议保持默认选项，并勾选设置“Add Anaconda to my PATH environment variable”选项，这样Miniconda的命令行工具和Python都可以直接在命令行中使用。</p></li>
+<li><p>完成安装：按照安装程序的指示进行安装，等待安装过程完成。</p></li>
+</ol>
+</section>
+</section>
+<section id="jupyterlab">
+<h2>4. 激活Jupyterlab编程环境<a class="headerlink" href="#jupyterlab" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://jupyter.org/">Jupyter</a>是一个开源的交互式计算环境。它的名字来源于三种编程语言的缩写：Julia、Python和R。Jupyter提供了一个Web界面，用户可以在浏览器中编写、运行和共享代码。它的核心是Notebook，一个交互式文档，可以包含代码、文本、数学公式、图表等元素，使得代码的编写、运行和可视化结果可以在同一个环境中完成。Jupyter的灵活性和易用性使得它成为数据科学、机器学习和科学计算领域中广泛使用的工具。</p>
+<a class="reference internal image-reference" href="../_images/labpreview.png"><img alt="labpreview" src="../_images/labpreview.png" style="width: 400px;" /></a>
+<p>chatgpt
+JupyterLab是Jupyter项目的下一代界面，提供了一个灵活的工作区，可以在同一个界面中编辑代码、运行代码、查看结果、编写文档、可视化数据等。</p>
+<section id="id4">
+<h3>4.1 进入命令行环境<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<section id="windows">
+<h4>4.1.1 如果你是Windows用户<a class="headerlink" href="#windows" title="Link to this heading">#</a></h4>
+<p>在系统菜单里找到并启动Anaconda PowerShell或者Anaconda PowerShell Prompt应用，打开</p>
+<a class="reference internal image-reference" href="../_images/anaconda_powershell2.png"><img alt="anaconda_powershell" src="../_images/anaconda_powershell2.png" style="width: 400px;" /></a>
+</section>
+<section id="macos">
+<h4>4.1.2 如果你是macOS用户<a class="headerlink" href="#macos" title="Link to this heading">#</a></h4>
+<p>如果你是macOS用户，找到并启动Terminal终端应用</p>
+<p><img alt="Terminal" src="../_images/Terminal.png" /></p>
+</section>
+</section>
+<section id="id5">
+<h3>4.2 安装jupyterlab<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>在以上的命令行环境下，输入以下命令来安装jupyterlab：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>install<span class="w"> </span>jupyterlab<span class="w"> </span>-y
+</pre></div>
+</div>
+<p>如果提示是否继续(Y/N)，可以按回车键继续。</p>
+<p>如果上述命令执行后，网速比较慢，可以使用替代方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">config</span> <span class="nb">set</span> <span class="k">global</span><span class="o">.</span><span class="n">index</span><span class="o">-</span><span class="n">url</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">pypi</span><span class="o">.</span><span class="n">tuna</span><span class="o">.</span><span class="n">tsinghua</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">simple</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">jupyterlab</span>
+</pre></div>
+</div>
+<p>然后，在以上的命令行环境下，输入以下命令来安装<strong>jupyterlab环境的中文包</strong>：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>jupyterlab-language-pack-zh-CN
+</pre></div>
+</div>
+</section>
+<section id="jupyter">
+<h3>4.3 进入Jupyter编程环境<a class="headerlink" href="#jupyter" title="Link to this heading">#</a></h3>
+<p>在以上命令行环境下，输入以下命令，并按回车键。</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>jupyter-lab
+</pre></div>
+</div>
+</section>
+<section id="id6">
+<h3>4.4 激活中文<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>启动jupyterlab后，点击settings，点击language，选择中文简体</p>
+<p><img alt="jupyterlab-zh-cn3" src="../_images/jupyterlab-zh-cn3.png" /></p>
+<p>然后，页面提示，点击change and reload</p>
+<a class="reference internal image-reference" href="../_images/jupyterlab-zh-cn2.png"><img alt="jupyterlab-zh-cn2" src="../_images/jupyterlab-zh-cn2.png" style="width: 400px;" /></a>
+</section>
+<section id="id7">
+<h3>4.5 如果遇到jupyterlab经常掉线<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>请联系老师来处理</p>
+</section>
+</section>
+<section id="id8">
+<h2>5 如何使用课件<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<section id="id9">
+<h3>5.1 下载本课程课件<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>在学习通上下载课件压缩包，压缩包格式为“.zip”为后缀的格式。</p>
+<p>建议将压缩包拖拽到桌面进行解压缩。</p>
+<p><img alt="zip" src="../_images/zip.png" /></p>
+<p>使用本地解压缩软件，解压缩该zip格式压缩包。</p>
+<p>如果没有解压缩软件，可以下载<strong>7zip</strong>软件。</p>
+</section>
+<section id="id10">
+<h3>5.2 用Jupyter打开课件<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>在桌面上新建一个文件夹【商务数据分析课件】，将刚才下载并解压缩后的文件夹放入此文件夹中。</p>
+<p>返回jupyter lab界面，找到desktop路径下的【商务数据分析课件】</p>
+<p>之后我们所有章节的课件，都可以通过以上方法，下载、解压缩、在jupyter-lab中打开。</p>
+<a class="reference internal image-reference" href="../_images/documents2.png"><img alt="documents2" src="../_images/documents2.png" style="width: 400px;" /></a>
+</section>
+<section id="id11">
+<h3>5.3 Jupyter在教学中的应用<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<p>在教学场景中，JupyterLab可以作为一个强大的工具来支持学生的学习和实践。以下是一些JupyterLab在教学中的常见用法：</p>
+<ol class="arabic simple">
+<li><p>笔记本分享和分发：教师可以创建JupyterLab笔记本，并与学生分享，学生可以通过浏览器访问并进行交互式学习。</p></li>
+<li><p>演示和讲解：教师可以使用JupyterLab来创建交互式演示，包含代码、图表和文本，可以实时展示和解释概念。</p></li>
+<li><p>编程实践：学生可以使用JupyterLab进行编程实践，通过编写和运行代码来学习和实践编程概念。</p></li>
+<li><p>数据分析和可视化：JupyterLab提供了丰富的数据分析和可视化工具，学生可以使用这些工具来分析和探索数据，并可视化结果。</p></li>
+<li><p>实验和模拟：JupyterLab支持各种编程语言和库，学生可以使用它来进行实验和模拟，例如科学计算、机器学习等。</p></li>
+<li><p>交互式教学：JupyterLab的交互性和可视化能力使得教师可以创建交互式学习材料，学生可以在笔记本中进行实时的学习和练习。</p></li>
+</ol>
+<p>总之，JupyterLab在教学场景中可以提供一个灵活、交互式和可视化的学习环境，帮助学生更好地理解和应用所学的知识。</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2_Python编程基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. python语言的优势</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2. 我的职业经验</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3. 安装Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#miniconda">3.1 安装miniconda</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">4. 激活Jupyterlab编程环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">4.1 进入命令行环境</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#windows">4.1.1 如果你是Windows用户</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#macos">4.1.2 如果你是macOS用户</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.2 安装jupyterlab</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter">4.3 进入Jupyter编程环境</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">4.4 激活中文</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">4.5 如果遇到jupyterlab经常掉线</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">5 如何使用课件</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">5.1 下载本课程课件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">5.2 用Jupyter打开课件</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">5.3 Jupyter在教学中的应用</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CXH
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

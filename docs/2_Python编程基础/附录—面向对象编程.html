@@ -1,0 +1,862 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>面向对象编程 &#8212; 金融大数据</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_Python编程基础/附录—面向对象编程';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../%E9%A6%96%E9%A1%B5.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-min.png" class="logo__image only-light" alt="金融大数据 - Home"/>
+    <script>document.write(`<img src="../_static/logo-min.png" class="logo__image only-dark" alt="金融大数据 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../%E9%A6%96%E9%A1%B5.html">
+                    课程首页
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_Python编程基础/附录—面向对象编程.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>面向对象编程</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 类与实例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.数据封装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.访问限制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.继承和多态</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cv">练习：创建个人简历类CV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setget">练习：个人简历的set和get方法</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>面向对象编程<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>面向对象编程——Object Oriented Programming，简称OOP，是一种程序设计思想。OOP把对象作为程序的基本单元，一个对象包含了数据和操作数据的函数。</p>
+<p>我们通过一个例子理解OOP。下面这个dict字典类型变量表示一个学生的个人信息：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span><span class="s1">&#39;Rose&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;age&#39;</span><span class="p">:</span><span class="mi">20</span><span class="p">,</span>
+          <span class="s1">&#39;gender&#39;</span><span class="p">:</span> <span class="s1">&#39;Female&#39;</span><span class="p">}</span>  
+</pre></div>
+</div>
+<p>如果需要显示这个学生的年龄，我们就使用print语句：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_age</span><span class="p">(</span><span class="n">student</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+<p>如果采用面向对象的程序设计思想，我们首选思考的不是程序的执行流程，而是<code class="docutils literal notranslate"><span class="pre">Student</span></code>这个变量应该被视为一个对象，这个对象拥有<code class="docutils literal notranslate"><span class="pre">name</span></code>和<code class="docutils literal notranslate"><span class="pre">age</span></code>这两个属性。如果要打印一个学生的年龄，首先必须创建出这个学生对应的对象，然后，让对象自己把自己的年龄打印出来。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">print_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print_age</span></code>这个函数，在这里我们称之为对象的<strong>方法</strong>（Method）。面向对象的程序写出来就像这样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">jack</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Jack&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<span class="n">rose</span> <span class="o">=</span> <span class="n">Student</span><span class="p">(</span><span class="s1">&#39;Rose&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">jack</span><span class="o">.</span><span class="n">print_age</span><span class="p">()</span>
+<span class="n">rose</span><span class="o">.</span><span class="n">print_age</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>面向对象的设计思想是从自然界中来的，因为在自然界中，类（Class）和实例（Instance）的概念是很自然的。<strong>类</strong>是一种抽象概念，比如我们定义的<strong>类</strong>——Student，是指学生这个概念，而<strong>实例</strong>则是一个个具体的Student，比如，Jack和Rose是两个具体的Student，我们称Jack和Rose为两个实例，两个类Student的实例。</p>
+<section id="id2">
+<h2>1. 类与实例<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>面向对象最重要的概念就是<strong>类（Class）<strong>和</strong>实例（Instance）</strong>，必须牢记<strong>类</strong>是抽象的模板，比如Student类，而<strong>实例</strong>是根据类创建出来的一个个具体的“对象”，每个对象都拥有相同的方法，但各自的数据可能不同。</p>
+<p>举个例子，很多刚大学毕业的学生撰写自己人生的第一份简历的时候，都无从下手。一般的方法是去网站上下载一份“简历模版”，然后在模块空白处填上自己的信息，包括基本信息、毕业院校、工作经验、荣誉奖励等等。模版相当于面向对象编程里的类，填写完个人信息的个人简历，相当于实例。</p>
+<p><img alt="template-instance" src="../_images/template-instance.png" /></p>
+<p>个人简历是根据模版创建出来的一个具体的“对象”，凡是使用同一个模版的个人简历，都包含同样的结构，但是信息不同）。就像下图，Jack、Rose、Micheal和Steve这4个同学都用了同一个简历模版，只是每个人的个人信息、工作经验、荣誉、兴趣爱好不同。类和实例的关系，也是这样，不同的实例只是它包含的数据不同。</p>
+<p><img alt="cvs" src="2_Python编程基础/image/cvs.png" /></p>
+<p>下面我们通过创建简历这个类，来学习类的具体创建方法。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">类名</span><span class="p">(</span><span class="n">继承的父类</span><span class="p">):</span>
+    <span class="c1">############</span>
+    <span class="c1"># 类的内部  #</span>
+    <span class="c1">#          #</span>
+    <span class="c1">#          #</span>
+    <span class="c1">############</span>
+    <span class="k">pass</span> 
+</pre></div>
+</div>
+<p>个人简历的英文单词缩写叫CV，我们创建一个名叫CV的类，请注意类名建议首字母使用大写形式。在Python中，定义类是通过<code class="docutils literal notranslate"><span class="pre">class</span></code>关键字，<code class="docutils literal notranslate"><span class="pre">class</span></code>后面紧接着是类名，即<code class="docutils literal notranslate"><span class="pre">CV</span></code>，类名通常是大写开头的单词，紧接着是<code class="docutils literal notranslate"><span class="pre">(object)</span></code>，表示该类是从哪个类继承下来的，继承的概念我们后面再讲，通常，如果没有合适的继承类，就使用<code class="docutils literal notranslate"><span class="pre">object</span></code>类，这是所有类最终都会继承的类。</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>定义好了<code class="docutils literal notranslate"><span class="pre">CV</span></code>类，就可以根据<code class="docutils literal notranslate"><span class="pre">CV</span></code>类创建出<code class="docutils literal notranslate"><span class="pre">CV</span></code>的实例，创建实例是通过类名+()实现的：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span> <span class="o">=</span> <span class="n">CV</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span>
+<span class="go">&lt;__main__.CV object at 0x10a67a590&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">CV</span>
+<span class="go">&lt;class &#39;__main__.CV&#39;&gt;</span>
+</pre></div>
+</div>
+<p>可以看到，变量<code class="docutils literal notranslate"><span class="pre">jack_CV</span></code>指向的就是一个<code class="docutils literal notranslate"><span class="pre">CV</span></code>的实例，后面的<code class="docutils literal notranslate"><span class="pre">0x10a67a590</span></code>是内存地址，每个object的地址都不一样，而<code class="docutils literal notranslate"><span class="pre">CV</span></code>本身则是一个类。</p>
+<p>可以自由地给一个实例变量绑定属性，比如，给实例<code class="docutils literal notranslate"><span class="pre">jack_CV</span></code>绑定一个<code class="docutils literal notranslate"><span class="pre">name</span></code>属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Jack Simpson&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+</pre></div>
+</div>
+<p>由于类可以起到模板的作用，因此，可以在创建实例的时候，把一些我们认为必须绑定的属性强制填写进去。通过定义一个特殊的<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法，在创建实例的时候，就把<code class="docutils literal notranslate"><span class="pre">name</span></code>，<code class="docutils literal notranslate"><span class="pre">age</span></code>等属性绑上去：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</pre></div>
+</div>
+<p>请注意，特殊方法“<strong>init</strong>”前后分别有两个下划线！！！</p>
+<p>注意到<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法的第一个参数永远是<code class="docutils literal notranslate"><span class="pre">self</span></code>，表示创建的实例本身，因此，在<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法内部，就可以把各种属性绑定到<code class="docutils literal notranslate"><span class="pre">self</span></code>，因为<code class="docutils literal notranslate"><span class="pre">self</span></code>就指向创建的实例本身。</p>
+<p>有了<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法，在创建实例的时候，就不能传入空的参数了，必须传入与<code class="docutils literal notranslate"><span class="pre">__init__</span></code>方法匹配的参数，但<code class="docutils literal notranslate"><span class="pre">self</span></code>不需要传，Python解释器自己会把实例变量传进去：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span> <span class="o">=</span> <span class="n">CV</span><span class="p">(</span><span class="s1">&#39;Jack Simpson&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">age</span>
+<span class="go">24</span>
+</pre></div>
+</div>
+<p>和普通的函数相比，在类中定义的函数只有一点不同，就是第一个参数永远是实例变量<code class="docutils literal notranslate"><span class="pre">self</span></code>，并且，调用时，不用传递该参数。除此之外，类的方法和普通函数没有什么区别，所以，你仍然可以用默认参数、可变参数、关键字参数和命名关键字参数。</p>
+</section>
+<section id="id3">
+<h2>2.数据封装<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p>面向对象编程的一个重要特点就是数据封装。在上面的<code class="docutils literal notranslate"><span class="pre">CV</span></code>类中，每个实例就拥有各自的<code class="docutils literal notranslate"><span class="pre">name</span></code>和<code class="docutils literal notranslate"><span class="pre">age</span></code>这些数据。我们可以通过函数来访问这些数据，比如打印一个学生的成绩：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">print_age</span><span class="p">(</span><span class="n">CV</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">CV</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">CV</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+<span class="gp">...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">print_age</span><span class="p">(</span><span class="n">jack_CV</span><span class="p">)</span>
+<span class="go">Jack Simpson: 24</span>
+</pre></div>
+</div>
+<p>但是，既然<code class="docutils literal notranslate"><span class="pre">CV</span></code>实例本身就拥有这些数据，要访问这些数据，就没有必要从外面的函数去访问，可以直接在<code class="docutils literal notranslate"><span class="pre">CV</span></code>类的内部定义访问数据的函数，这样，就把“数据”给封装起来了。这些封装数据的函数是和<code class="docutils literal notranslate"><span class="pre">CV</span></code>类本身是关联起来的，我们称之为类的方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">print_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>要定义一个方法，除了第一个参数是<code class="docutils literal notranslate"><span class="pre">self</span></code>外，其他和普通函数一样。要调用一个方法，只需要在实例变量上直接调用，除了<code class="docutils literal notranslate"><span class="pre">self</span></code>不用传递，其他参数正常传入：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">print_age</span><span class="p">()</span>
+<span class="go">Jack Simpson: 24</span>
+</pre></div>
+</div>
+<p>这样一来，我们从外部看<code class="docutils literal notranslate"><span class="pre">CV</span></code>类，就只需要知道，创建实例需要给出<code class="docutils literal notranslate"><span class="pre">name</span></code>和<code class="docutils literal notranslate"><span class="pre">age</span></code>，而如何打印，都是在<code class="docutils literal notranslate"><span class="pre">CV</span></code>类的内部定义的，这些数据和逻辑被“封装”起来了，调用很容易，但却不用知道内部实现的细节。</p>
+</section>
+<section id="id4">
+<h2>3.访问限制<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>在Class内部，可以有属性和方法，而外部代码可以通过直接调用实例变量的方法来操作数据，这样，就隐藏了内部的复杂逻辑。</p>
+<p>但是，从前面<code class="docutils literal notranslate"><span class="pre">CV</span></code>类的定义来看，外部代码还是可以自由地修改一个实例的<code class="docutils literal notranslate"><span class="pre">name</span></code>、<code class="docutils literal notranslate"><span class="pre">age</span></code>属性：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span> <span class="o">=</span> <span class="n">CV</span><span class="p">(</span><span class="s1">&#39;Jack Simpson&#39;</span><span class="p">,</span> <span class="mi">24</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">age</span>
+<span class="go">24</span>
+</pre></div>
+</div>
+<p>如果要让内部属性不被外部访问，可以把属性的名称前加上两个下划线<code class="docutils literal notranslate"><span class="pre">__</span></code>，在Python中，实例的变量名如果以<code class="docutils literal notranslate"><span class="pre">__</span></code>开头，就变成了一个私有变量（private），只有内部可以访问，外部不能访问，所以，我们把CV类改一改：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
+
+    <span class="k">def</span> <span class="nf">print_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1">: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__name</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>改完后，对于外部代码来说，没什么变动，但是已经无法从外部访问<code class="docutils literal notranslate"><span class="pre">实例变量.__name</span></code>和<code class="docutils literal notranslate"><span class="pre">实例变量.__age</span></code>了：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span> <span class="o">=</span> <span class="n">CV</span><span class="p">(</span><span class="s1">&#39;Jack Simpson&#39;</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">__name</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="gr">AttributeError</span>: <span class="n">&#39;CV&#39; object has no attribute &#39;__name&#39;</span>
+</pre></div>
+</div>
+<p>这样就确保了外部代码不能随意修改对象内部的状态，这样通过访问限制的保护，代码更加健壮。</p>
+<p>但是如果外部代码要获取name和age怎么办？可以给CV类增加<code class="docutils literal notranslate"><span class="pre">get_name</span></code>和<code class="docutils literal notranslate"><span class="pre">get_age</span></code>这样的方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>
+
+    <span class="k">def</span> <span class="nf">get_age</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__age</span>
+</pre></div>
+</div>
+<p>如果又要允许外部代码修改age怎么办？可以再给Student类增加<code class="docutils literal notranslate"><span class="pre">set_age</span></code>方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
+</pre></div>
+</div>
+<p>你也许会问，原先那种直接通过<code class="docutils literal notranslate"><span class="pre">jack_CV.age</span> <span class="pre">=</span> <span class="pre">24</span></code>也可以修改啊，为什么要定义一个方法大费周折？因为在方法中，可以对参数做检查，避免传入无效的参数：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="o">...</span>
+
+    <span class="k">def</span> <span class="nf">set_age</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+      	<span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">age</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">int</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;age should be int type!&#39;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">&#39;wrong range, age should be in (0,100)!&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__age</span> <span class="o">=</span> <span class="n">age</span>
+</pre></div>
+</div>
+<p>需要注意的是，在Python中，变量名类似<code class="docutils literal notranslate"><span class="pre">__xxx__</span></code>的，也就是以双下划线开头，并且以双下划线结尾的，是特殊变量，特殊变量是可以直接访问的，不是private变量，所以，不能用<code class="docutils literal notranslate"><span class="pre">__name__</span></code>、<code class="docutils literal notranslate"><span class="pre">__age__</span></code>这样的变量名。</p>
+<p>有些时候，你会看到以一个下划线开头的实例变量名，比如<code class="docutils literal notranslate"><span class="pre">_name</span></code>，这样的实例变量外部是可以访问的，但是，按照约定俗成的规定，当你看到这样的变量时，意思就是，“虽然我可以被访问，但是，请把我视为私有变量，不要随意访问”。</p>
+<p>双下划线开头的实例变量是不是一定不能从外部访问呢？其实也不是。不能直接访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>是因为Python解释器对外把<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量改成了<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>，所以，仍然可以通过<code class="docutils literal notranslate"><span class="pre">_Student__name</span></code>来访问<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">_Student__name</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+</pre></div>
+</div>
+<p>但是强烈建议你不要这么干，因为不同版本的Python解释器可能会把<code class="docutils literal notranslate"><span class="pre">__name</span></code>改成不同的变量名。</p>
+<p>总的来说就是，Python本身没有任何机制阻止你干坏事，一切全靠自觉。</p>
+<p>最后注意下面的这种<em>错误写法</em>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span> <span class="o">=</span> <span class="n">CV</span><span class="p">(</span><span class="s1">&#39;Jack Simpson&#39;</span><span class="p">,</span> <span class="mi">59</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="s1">&#39;New Name&#39;</span> <span class="c1"># 设置__name变量！</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">__name</span>
+<span class="go">&#39;New Name&#39;</span>
+</pre></div>
+</div>
+<p>表面上看，外部代码“成功”地设置了<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量，但实际上这个<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量和class内部的<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量<em>不是</em>一个变量！内部的<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量已经被Python解释器自动改成了<code class="docutils literal notranslate"><span class="pre">_CV__name</span></code>，而外部代码给<code class="docutils literal notranslate"><span class="pre">bart</span></code>新增了一个<code class="docutils literal notranslate"><span class="pre">__name</span></code>变量。不信试试：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">jack_CV</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="c1"># get_name()内部返回self.__name</span>
+<span class="go">&#39;Jack Simpson&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h2>4.继承和多态<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p>在OOP程序设计中，当我们定义一个class的时候，可以从某个现有的class继承，新的class称为子类（Subclass），而被继承的class称为基类、父类或超类（Base class、Super class）。</p>
+<p>比如，我们已经编写了一个名为<code class="docutils literal notranslate"><span class="pre">Animal</span></code>的class，有一个<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法，表示动物在跑：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Animal is running...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当我们需要编写<code class="docutils literal notranslate"><span class="pre">Dog</span></code>和<code class="docutils literal notranslate"><span class="pre">Cat</span></code>类时，就可以直接从<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类继承：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<p>对于<code class="docutils literal notranslate"><span class="pre">Dog</span></code>来说，<code class="docutils literal notranslate"><span class="pre">Animal</span></code>就是它的父类，对于<code class="docutils literal notranslate"><span class="pre">Animal</span></code>来说，<code class="docutils literal notranslate"><span class="pre">Dog</span></code>就是它的子类。<code class="docutils literal notranslate"><span class="pre">Cat</span></code>和<code class="docutils literal notranslate"><span class="pre">Dog</span></code>类似。</p>
+<p>继承有什么好处？最大的好处是子类获得了父类的全部功能。由于<code class="docutils literal notranslate"><span class="pre">Animial</span></code>实现了<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法，因此，<code class="docutils literal notranslate"><span class="pre">Dog</span></code>和<code class="docutils literal notranslate"><span class="pre">Cat</span></code>作为它的子类，什么事也没干，就自动拥有了<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span>
+<span class="n">dog</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+
+<span class="n">cat</span> <span class="o">=</span> <span class="n">Cat</span><span class="p">()</span>
+<span class="n">cat</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>运行结果如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Animal</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">Animal</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>当然，也可以对子类增加一些方法，比如Dog类：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">eat</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eating meat...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>继承的第二个好处需要我们对代码做一点改进。你看到了，无论是<code class="docutils literal notranslate"><span class="pre">Dog</span></code>还是<code class="docutils literal notranslate"><span class="pre">Cat</span></code>，它们<code class="docutils literal notranslate"><span class="pre">run()</span></code>的时候，显示的都是<code class="docutils literal notranslate"><span class="pre">Animal</span> <span class="pre">is</span> <span class="pre">running...</span></code>，符合逻辑的做法是分别显示<code class="docutils literal notranslate"><span class="pre">Dog</span> <span class="pre">is</span> <span class="pre">running...</span></code>和<code class="docutils literal notranslate"><span class="pre">Cat</span> <span class="pre">is</span> <span class="pre">running...</span></code>，因此，对<code class="docutils literal notranslate"><span class="pre">Dog</span></code>和<code class="docutils literal notranslate"><span class="pre">Cat</span></code>类改进如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dog is running...&#39;</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cat is running...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>再次运行，结果如下：</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Dog</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+<span class="n">Cat</span> <span class="ow">is</span> <span class="n">running</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>当子类和父类都存在相同的<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法时，我们说，子类的<code class="docutils literal notranslate"><span class="pre">run()</span></code>覆盖了父类的<code class="docutils literal notranslate"><span class="pre">run()</span></code>，在代码运行的时候，总是会调用子类的<code class="docutils literal notranslate"><span class="pre">run()</span></code>。这样，我们就获得了继承的另一个好处：<strong>多态</strong>。</p>
+<p>要理解什么是多态，我们首先要对数据类型再作一点说明。当我们定义一个class的时候，我们实际上就定义了一种数据类型。我们定义的数据类型和Python自带的数据类型，比如str、list、dict没什么两样：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">list</span><span class="p">()</span> <span class="c1"># a是list类型</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">()</span> <span class="c1"># b是Animal类型</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">()</span> <span class="c1"># c是Dog类型</span>
+</pre></div>
+</div>
+<p>判断一个变量是否是某个类型可以用<code class="docutils literal notranslate"><span class="pre">isinstance()</span></code>判断：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">Animal</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Dog</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>看来<code class="docutils literal notranslate"><span class="pre">a</span></code>、<code class="docutils literal notranslate"><span class="pre">b</span></code>、<code class="docutils literal notranslate"><span class="pre">c</span></code>确实对应着<code class="docutils literal notranslate"><span class="pre">list</span></code>、<code class="docutils literal notranslate"><span class="pre">Animal</span></code>、<code class="docutils literal notranslate"><span class="pre">Dog</span></code>这3种类型。</p>
+<p>但是等等，试试：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">Animal</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>看来<code class="docutils literal notranslate"><span class="pre">c</span></code>不仅仅是<code class="docutils literal notranslate"><span class="pre">Dog</span></code>，<code class="docutils literal notranslate"><span class="pre">c</span></code>还是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>！</p>
+<p>不过仔细想想，这是有道理的，因为<code class="docutils literal notranslate"><span class="pre">Dog</span></code>是从<code class="docutils literal notranslate"><span class="pre">Animal</span></code>继承下来的，当我们创建了一个<code class="docutils literal notranslate"><span class="pre">Dog</span></code>的实例<code class="docutils literal notranslate"><span class="pre">c</span></code>时，我们认为<code class="docutils literal notranslate"><span class="pre">c</span></code>的数据类型是<code class="docutils literal notranslate"><span class="pre">Dog</span></code>没错，但<code class="docutils literal notranslate"><span class="pre">c</span></code>同时也是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>也没错，<code class="docutils literal notranslate"><span class="pre">Dog</span></code>本来就是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>的一种！</p>
+<p>所以，在继承关系中，如果一个实例的数据类型是某个子类，那它的数据类型也可以被看做是父类。但是，反过来就不行：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">Dog</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Dog</span></code>可以看成<code class="docutils literal notranslate"><span class="pre">Animal</span></code>，但<code class="docutils literal notranslate"><span class="pre">Animal</span></code>不可以看成<code class="docutils literal notranslate"><span class="pre">Dog</span></code>。</p>
+<p>要理解多态的好处，我们还需要再编写一个函数，这个函数接受一个<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型的变量：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run_twice</span><span class="p">(</span><span class="n">animal</span><span class="p">):</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>当我们传入<code class="docutils literal notranslate"><span class="pre">Animal</span></code>的实例时，<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>就打印出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run_twice</span><span class="p">(</span><span class="n">Animal</span><span class="p">())</span>
+<span class="go">Animal is running...</span>
+<span class="go">Animal is running...</span>
+</pre></div>
+</div>
+<p>当我们传入<code class="docutils literal notranslate"><span class="pre">Dog</span></code>的实例时，<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>就打印出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run_twice</span><span class="p">(</span><span class="n">Dog</span><span class="p">())</span>
+<span class="go">Dog is running...</span>
+<span class="go">Dog is running...</span>
+</pre></div>
+</div>
+<p>当我们传入<code class="docutils literal notranslate"><span class="pre">Cat</span></code>的实例时，<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>就打印出：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run_twice</span><span class="p">(</span><span class="n">Cat</span><span class="p">())</span>
+<span class="go">Cat is running...</span>
+<span class="go">Cat is running...</span>
+</pre></div>
+</div>
+<p>看上去没啥意思，但是仔细想想，现在，如果我们再定义一个<code class="docutils literal notranslate"><span class="pre">Tortoise</span></code>类型，也从<code class="docutils literal notranslate"><span class="pre">Animal</span></code>派生：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Tortoise</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tortoise is running slowly...&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>当我们调用<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>时，传入<code class="docutils literal notranslate"><span class="pre">Tortoise</span></code>的实例：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">run_twice</span><span class="p">(</span><span class="n">Tortoise</span><span class="p">())</span>
+<span class="go">Tortoise is running slowly...</span>
+<span class="go">Tortoise is running slowly...</span>
+</pre></div>
+</div>
+<p>你会发现，新增一个<code class="docutils literal notranslate"><span class="pre">Animal</span></code>的子类，不必对<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>做任何修改，实际上，任何依赖<code class="docutils literal notranslate"><span class="pre">Animal</span></code>作为参数的函数或者方法都可以不加修改地正常运行，原因就在于多态。</p>
+<p>多态的好处就是，当我们需要传入<code class="docutils literal notranslate"><span class="pre">Dog</span></code>、<code class="docutils literal notranslate"><span class="pre">Cat</span></code>、<code class="docutils literal notranslate"><span class="pre">Tortoise</span></code>……时，我们只需要接收<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型就可以了，因为<code class="docutils literal notranslate"><span class="pre">Dog</span></code>、<code class="docutils literal notranslate"><span class="pre">Cat</span></code>、<code class="docutils literal notranslate"><span class="pre">Tortoise</span></code>……都是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型，然后，按照<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型进行操作即可。由于<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型有<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法，因此，传入的任意类型，只要是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类或者子类，就会自动调用实际类型的<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法，这就是多态的意思：</p>
+<p>对于一个变量，我们只需要知道它是<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型，无需确切地知道它的子类型，就可以放心地调用<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法，而具体调用的<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法是作用在<code class="docutils literal notranslate"><span class="pre">Animal</span></code>、<code class="docutils literal notranslate"><span class="pre">Dog</span></code>、<code class="docutils literal notranslate"><span class="pre">Cat</span></code>还是<code class="docutils literal notranslate"><span class="pre">Tortoise</span></code>对象上，由运行时该对象的确切类型决定，这就是多态真正的威力：调用方只管调用，不管细节，而当我们新增一种<code class="docutils literal notranslate"><span class="pre">Animal</span></code>的子类时，只要确保<code class="docutils literal notranslate"><span class="pre">run()</span></code>方法编写正确，不用管原来的代码是如何调用的。这就是著名的“开闭”原则：</p>
+<p>对扩展开放：允许新增<code class="docutils literal notranslate"><span class="pre">Animal</span></code>子类；</p>
+<p>对修改封闭：不需要修改依赖<code class="docutils literal notranslate"><span class="pre">Animal</span></code>类型的<code class="docutils literal notranslate"><span class="pre">run_twice()</span></code>等函数。</p>
+<p>继承还可以一级一级地继承下来，就好比从爷爷到爸爸、再到儿子这样的关系。而任何类，最终都可以追溯到根类object，这些继承关系看上去就像一颗倒着的树。比如如下的继承树：</p>
+<div class="highlight-ascii notranslate"><div class="highlight"><pre><span></span>                ┌───────────────┐
+                │    object     │
+                └───────────────┘
+                        │
+           ┌────────────┴────────────┐
+           │                         │
+           ▼                         ▼
+    ┌─────────────┐           ┌─────────────┐
+    │   Animal    │           │    Plant    │
+    └─────────────┘           └─────────────┘
+           │                         │
+     ┌─────┴──────┐            ┌─────┴──────┐
+     │            │            │            │
+     ▼            ▼            ▼            ▼
+┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐
+│   Dog   │  │   Cat   │  │  Tree   │  │ Flower  │
+└─────────┘  └─────────┘  └─────────┘  └─────────┘
+</pre></div>
+</div>
+</section>
+<section id="cv">
+<h2>练习：创建个人简历类CV<a class="headerlink" href="#cv" title="Link to this heading">#</a></h2>
+<a class="reference internal image-reference" href="../_images/null-template.jpg"><img alt="null-template" src="../_images/null-template.jpg" style="width: 400px;" /></a>
+<p>我们创建一个类，名字为CV，它完成个人简历的录入、修改和打印功能。</p>
+<p>它包含以下属性：</p>
+<ul class="simple">
+<li><p>名字，字符串</p></li>
+<li><p>性别，字符串</p></li>
+<li><p>年龄，整形</p></li>
+<li><p>联系方式，字符串</p></li>
+<li><p>毕业院校，列表嵌套了字典，每一条毕业院校包含以下：”开始日期”,”结束日期”, “学校名称”, “专业”, 学位”</p></li>
+<li><p>技能证书，列表</p></li>
+<li><p>兴趣爱好，列表</p></li>
+<li><p>工作经历，列表嵌套了字典，每一条工作经历包含以下信息：”开始日期”,”结束日期”,”工作单位”,”工作描述”</p></li>
+<li><p>荣誉奖励，列表嵌套了字典，每一条荣誉奖励包含以下信息：”日期”,”荣誉名称”</p></li>
+</ul>
+<p>它包含以下方法：</p>
+<ul class="simple">
+<li><p>打印个人基本信息 print_basic_info()</p></li>
+<li><p>打印学业信息 print_university()</p></li>
+<li><p>打印技能证书 print_skills_certificates()</p></li>
+</ul>
+<p>以上变量名称建议使用英文单词代替。</p>
+<p>最后创建一个简历类的实例叫fengkai，并录入以下信息，并打印他的基本信息，学业信息，技能证书</p>
+<a class="reference internal image-reference" href="../_images/template.jpg"><img alt="template" src="../_images/template.jpg" style="width: 400px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">CV</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">gender</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">gender</span> <span class="o">=</span> <span class="n">gender</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span><span class="n">age</span>
+        <span class="c1"># your code is here^^</span>
+        
+        
+    <span class="k">def</span> <span class="nf">print_basic_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># your code is here^^</span>
+        <span class="k">return</span>
+        
+    
+    <span class="k">def</span> <span class="nf">print_university</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># your code is here^^</span>
+        <span class="k">return</span>
+
+
+    <span class="k">def</span> <span class="nf">print_skills_certificates</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1"># your code is here^^</span>
+        <span class="k">return</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="setget">
+<h2>练习：个人简历的set和get方法<a class="headerlink" href="#setget" title="Link to this heading">#</a></h2>
+<p>一名叫Jack的同学，他获得了“普通话二级甲等证书”，属于语言证书类别。请设计一个类完成简历的功能，并实例化：</p>
+<p>1）调用Jack.set_certificate(“普通话二级甲等证书”)来添加证书；</p>
+<p>2）调用Jack.get_certificate() 返回一个列表，其中包含“普通话二级甲等证书”。</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2_Python编程基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">1. 类与实例</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">2.数据封装</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">3.访问限制</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">4.继承和多态</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cv">练习：创建个人简历类CV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setget">练习：个人简历的set和get方法</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CXH
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

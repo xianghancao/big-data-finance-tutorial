@@ -1,0 +1,948 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>循环语句 &#8212; 金融大数据</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_Python编程基础/2.7 循环语句';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../%E9%A6%96%E9%A1%B5.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-min.png" class="logo__image only-light" alt="金融大数据 - Home"/>
+    <script>document.write(`<img src="../_static/logo-min.png" class="logo__image only-dark" alt="金融大数据 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../%E9%A6%96%E9%A1%B5.html">
+                    课程首页
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_Python编程基础/2.7 循环语句.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>循环语句</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">（一）while循环</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">练习：如何求1，3，5，7，。。99，间隔为2的等差数列的和。</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">（二）for循环</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">（三）break语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue">（四）continue语句</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">练习：高斯小时候的故事</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">练习： 循环打印</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">练习：计算平均值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">练习：计算方差</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">练习：计算最大值</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>总结</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">练习答案</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">练习答案：如何求1，3，5，7，。。99，间隔为2的等差数列的和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">练习答案：循环打印</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">练习答案：计算平均值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">练习答案：计算方差</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">练习答案：计算最大值</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>循环语句<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>循环结构是在满足一定条件下<strong>反复执行某一段语句块</strong>的流程控制结构。反复被执行的语句块被称为<strong>循环体</strong>。</p>
+<section id="while">
+<h2>（一）while循环<a class="headerlink" href="#while" title="Link to this heading">#</a></h2>
+<p>while循环语句的语法形式为：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span><span class="p">(</span><span class="n">条件表达式</span><span class="p">):</span>
+    <span class="n">循环体</span>
+</pre></div>
+</div>
+<p>while语句的执行过程是先判断<code class="docutils literal notranslate"><span class="pre">条件表达式</span></code>的值，若值为True，则执行<code class="docutils literal notranslate"><span class="pre">循环体</span></code>，否则将跳过<code class="docutils literal notranslate"><span class="pre">循环体</span></code>，执行while语句后面的语句。
+每次<code class="docutils literal notranslate"><span class="pre">循环体</span></code>执行完毕后，再转到<code class="docutils literal notranslate"><span class="pre">条件表达式</span></code>判断真假，以决定是否再次执行<code class="docutils literal notranslate"><span class="pre">循环体</span></code>。</p>
+<p><img alt="loop01" src="../_images/loop01.png" /></p>
+<p>这个例子是计算1到100的自然数的和。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>                          <span class="c1"># n负责存储自然数，用于遍历自然数1，2，3，4，5.。。。100</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>                          <span class="c1"># s负责存储求和的结果，初始为0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span>                  <span class="c1">#求和，并保存求和的结果到s</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;s:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">1</span>                  <span class="c1">#让自然数+1，并更新自然数n</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum from 1 to 100 is&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n: 1 s: 1
+n: 2 s: 3
+n: 3 s: 6
+n: 4 s: 10
+n: 5 s: 15
+n: 6 s: 21
+n: 7 s: 28
+n: 8 s: 36
+n: 9 s: 45
+n: 10 s: 55
+n: 11 s: 66
+n: 12 s: 78
+n: 13 s: 91
+n: 14 s: 105
+n: 15 s: 120
+n: 16 s: 136
+n: 17 s: 153
+n: 18 s: 171
+n: 19 s: 190
+n: 20 s: 210
+n: 21 s: 231
+n: 22 s: 253
+n: 23 s: 276
+n: 24 s: 300
+n: 25 s: 325
+n: 26 s: 351
+n: 27 s: 378
+n: 28 s: 406
+n: 29 s: 435
+n: 30 s: 465
+n: 31 s: 496
+n: 32 s: 528
+n: 33 s: 561
+n: 34 s: 595
+n: 35 s: 630
+n: 36 s: 666
+n: 37 s: 703
+n: 38 s: 741
+n: 39 s: 780
+n: 40 s: 820
+n: 41 s: 861
+n: 42 s: 903
+n: 43 s: 946
+n: 44 s: 990
+n: 45 s: 1035
+n: 46 s: 1081
+n: 47 s: 1128
+n: 48 s: 1176
+n: 49 s: 1225
+n: 50 s: 1275
+n: 51 s: 1326
+n: 52 s: 1378
+n: 53 s: 1431
+n: 54 s: 1485
+n: 55 s: 1540
+n: 56 s: 1596
+n: 57 s: 1653
+n: 58 s: 1711
+n: 59 s: 1770
+n: 60 s: 1830
+n: 61 s: 1891
+n: 62 s: 1953
+n: 63 s: 2016
+n: 64 s: 2080
+n: 65 s: 2145
+n: 66 s: 2211
+n: 67 s: 2278
+n: 68 s: 2346
+n: 69 s: 2415
+n: 70 s: 2485
+n: 71 s: 2556
+n: 72 s: 2628
+n: 73 s: 2701
+n: 74 s: 2775
+n: 75 s: 2850
+n: 76 s: 2926
+n: 77 s: 3003
+n: 78 s: 3081
+n: 79 s: 3160
+n: 80 s: 3240
+n: 81 s: 3321
+n: 82 s: 3403
+n: 83 s: 3486
+n: 84 s: 3570
+n: 85 s: 3655
+n: 86 s: 3741
+n: 87 s: 3828
+n: 88 s: 3916
+n: 89 s: 4005
+n: 90 s: 4095
+n: 91 s: 4186
+n: 92 s: 4278
+n: 93 s: 4371
+n: 94 s: 4465
+n: 95 s: 4560
+n: 96 s: 4656
+n: 97 s: 4753
+n: 98 s: 4851
+n: 99 s: 4950
+n: 100 s: 5050
+The sum from 1 to 100 is 5050
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id2">
+<h3>练习：如何求1，3，5，7，。。99，间隔为2的等差数列的和。<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+</section>
+</section>
+<section id="for">
+<h2>（二）for循环<a class="headerlink" href="#for" title="Link to this heading">#</a></h2>
+<p>for语句通常用来遍历字符串、列表、元祖等序列数据类型中的元素。对序列中的每个元素执行一次相关的循环体。for语句的语法形式如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">变量</span> <span class="ow">in</span> <span class="n">序列</span><span class="p">:</span>
+    <span class="n">循环体</span>
+</pre></div>
+</div>
+<p>下面这个例子使用for语句循环输出列表list1中的所有元素。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">list1</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+5
+</pre></div>
+</div>
+</div>
+</div>
+<p>此外，for语句经常使用range/xrange函数生成序列。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+2
+3
+4
+</pre></div>
+</div>
+</div>
+</div>
+<p>使用range函数生成序列，请注意它的起止范围。函数range(1,5)生成序列[1,2,3,4]。</p>
+</section>
+<section id="break">
+<h2>（三）break语句<a class="headerlink" href="#break" title="Link to this heading">#</a></h2>
+<p>break语句用于控制程序提前结束循环而执行<code class="docutils literal notranslate"><span class="pre">循环体</span></code>后面的语句。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">list2</span> <span class="o">=</span> <span class="p">[]</span>                                      <span class="c1"># 定义一个空的列表 </span>
+<span class="k">while</span><span class="p">(</span><span class="kc">True</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;请输入数据（当输入-1时结束）:&#39;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>                     
+        <span class="k">break</span>                                   <span class="c1"># 当输入=-1时，则跳出循环</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">list2</span> <span class="o">=</span> <span class="n">list2</span> <span class="o">+</span> <span class="p">[</span><span class="n">x</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">list2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="continue">
+<h2>（四）continue语句<a class="headerlink" href="#continue" title="Link to this heading">#</a></h2>
+<p>continue语句用于结束本次循环，重新判断条件表达式真假，若为True，则继续循环，否则，结束循环。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">i</span><span class="o">&lt;=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span> != 0:       # 如果i是奇数，则continue，跳至while语句，不执行后面的print
+        <span class="k">continue</span>       <span class="c1"># %为整除 !=为不等于</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>           <span class="c1"># 注意此语句的锁进与上面的if对齐，表示其仍在while内</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+4
+6
+8
+10
+</pre></div>
+</div>
+</div>
+</div>
+<section id="id3">
+<h3>练习：高斯小时候的故事<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>高斯小时候非常淘气，一次数学课上，老师为了让他们安静下来，给他们列了一道很难的算式，让他们一个小时内算出1+2+3+4+5+6+……+100的得数。</p>
+<p><code class="docutils literal notranslate"><span class="pre">range(101)</span></code>就可以生成0-100的整数序列，计算如下：</p>
+</section>
+<section id="id4">
+<h3>练习： 循环打印<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<p>请利用循环for语句和print语句，依次对list中的每个名字打印出<code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">xxx!</span></code>：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bart&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>练习：计算平均值<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>均值是描述性统计方法中最常见的指标，它主要用来计算全体样本或抽样的平均值。</p>
+<div class="math notranslate nohighlight">
+\[
+\mu = \frac{x_1+x_2+\dots+x_n}{n}
+\]</div>
+<p>试用变量、列表list和循环for语句计算数列 [1, 2, 3, 4, 5]的平均值。</p>
+</section>
+<section id="id6">
+<h3>练习：计算方差<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<p>参照上述平均值的计算方法，进一步计算数列[1, 2, 3, 4, 5]的方差。
+方差公式为：</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma^2 = \frac{(x_1-\mu)^2+(x_2-\mu)^2+\dots+(x_3-\mu)^2}{n}
+\]</div>
+<p>提示：使用列表list和循环for语句，也可使用函数def语句</p>
+</section>
+<section id="id7">
+<h3>练习：计算最大值<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>试用变量、循环for语句和判断if语句计算数列 [1, 5, 3, 4, 2]中的最大值。</p>
+</section>
+</section>
+<section id="id8">
+<h2><strong>总结</strong><a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>循环是让计算机做重复任务的有效的方法。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">break</span></code>语句可以在循环过程中直接退出循环，而<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句可以提前结束本轮循环，并直接开始下一轮循环。这两个语句通常都<em>必须</em>配合<code class="docutils literal notranslate"><span class="pre">if</span></code>语句使用。</p></li>
+<li><p><em>要特别注意</em>，不要滥用<code class="docutils literal notranslate"><span class="pre">break</span></code>和<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句。<code class="docutils literal notranslate"><span class="pre">break</span></code>和<code class="docutils literal notranslate"><span class="pre">continue</span></code>会造成代码执行逻辑分叉过多，容易出错。大多数循环并不需要用到<code class="docutils literal notranslate"><span class="pre">break</span></code>和<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句，上面的两个例子，都可以通过改写循环条件或者修改循环逻辑，去掉<code class="docutils literal notranslate"><span class="pre">break</span></code>和<code class="docutils literal notranslate"><span class="pre">continue</span></code>语句。</p></li>
+<li><p>有些时候，如果代码写得有问题，会让程序陷入“死循环”，也就是永远循环下去。在命令行模式下用<code class="docutils literal notranslate"><span class="pre">Ctrl+C</span></code>退出程序，或者在Jupyter里点击打断内核或者重启内核。</p></li>
+</ol>
+</section>
+<section id="id9">
+<h2>练习答案<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>练习答案：如何求1，3，5，7，。。99，间隔为2的等差数列的和<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">1</span>                          <span class="c1"># n负责存储自然数，用于遍历自然数1，2，3，4，5.。。。100</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>                          <span class="c1"># s负责存储求和的结果，初始为0</span>
+<span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">&lt;=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">n</span>                  <span class="c1">#求和，并保存求和的结果到s</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n:&#39;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="s1">&#39;s:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">n</span> <span class="o">+</span> <span class="mi">2</span>                  <span class="c1">#让自然数+1，并更新自然数n</span>
+    
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The sum from 1 to 100 is&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>n: 1 s: 1
+n: 3 s: 4
+n: 5 s: 9
+n: 7 s: 16
+n: 9 s: 25
+n: 11 s: 36
+n: 13 s: 49
+n: 15 s: 64
+n: 17 s: 81
+n: 19 s: 100
+n: 21 s: 121
+n: 23 s: 144
+n: 25 s: 169
+n: 27 s: 196
+n: 29 s: 225
+n: 31 s: 256
+n: 33 s: 289
+n: 35 s: 324
+n: 37 s: 361
+n: 39 s: 400
+n: 41 s: 441
+n: 43 s: 484
+n: 45 s: 529
+n: 47 s: 576
+n: 49 s: 625
+n: 51 s: 676
+n: 53 s: 729
+n: 55 s: 784
+n: 57 s: 841
+n: 59 s: 900
+n: 61 s: 961
+n: 63 s: 1024
+n: 65 s: 1089
+n: 67 s: 1156
+n: 69 s: 1225
+n: 71 s: 1296
+n: 73 s: 1369
+n: 75 s: 1444
+n: 77 s: 1521
+n: 79 s: 1600
+n: 81 s: 1681
+n: 83 s: 1764
+n: 85 s: 1849
+n: 87 s: 1936
+n: 89 s: 2025
+n: 91 s: 2116
+n: 93 s: 2209
+n: 95 s: 2304
+n: 97 s: 2401
+n: 99 s: 2500
+The sum from 1 to 100 is 2500
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id11">
+<h3>练习答案：循环打印<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bart&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">L</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, </span><span class="si">%s</span><span class="s1">!&#39;</span> <span class="o">%</span><span class="k">i</span>)
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, Bart!
+Hello, Lisa!
+Hello, Adam!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Bart&#39;</span><span class="p">,</span> <span class="s1">&#39;Lisa&#39;</span><span class="p">,</span> <span class="s1">&#39;Adam&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">L</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello </span><span class="si">%s</span><span class="s1">!&#39;</span> <span class="o">%</span><span class="k">L</span>[i])
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello Bart!
+Hello Lisa!
+Hello Adam!
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id12">
+<h3>练习答案：计算平均值<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+<span class="n">avg</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Average value of </span><span class="si">%s</span><span class="s2"> is: </span><span class="si">%.2f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">avg</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Average value of [1, 2, 3, 4, 5] is: 3.00
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id13">
+<h3>练习答案：计算方差<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    本函数计算给定列表x的平均值</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">i</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">mu</span>
+
+<span class="k">def</span> <span class="nf">variance</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    本函数计算给定列表x的方差</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">mu</span> <span class="o">=</span> <span class="n">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="n">i</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+    <span class="n">var</span> <span class="o">=</span> <span class="n">s</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">var</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">variance</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id14">
+<h3>练习答案：计算最大值<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">max_num</span> <span class="o">=</span> <span class="mi">0</span>                
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span>                
+    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">max_num</span><span class="p">:</span>        
+        <span class="n">max_num</span> <span class="o">=</span> <span class="n">i</span>        
+<span class="n">max_num</span>  
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2_Python编程基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while">（一）while循环</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">练习：如何求1，3，5，7，。。99，间隔为2的等差数列的和。</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for">（二）for循环</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#break">（三）break语句</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continue">（四）continue语句</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">练习：高斯小时候的故事</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">练习： 循环打印</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">练习：计算平均值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">练习：计算方差</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">练习：计算最大值</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>总结</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">练习答案</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">练习答案：如何求1，3，5，7，。。99，间隔为2的等差数列的和</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">练习答案：循环打印</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">练习答案：计算平均值</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">练习答案：计算方差</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id14">练习答案：计算最大值</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CXH
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

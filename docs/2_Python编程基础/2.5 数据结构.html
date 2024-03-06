@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>数据结构 &#8212; 金融大数据</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '2_Python编程基础/2.5 数据结构';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../%E9%A6%96%E9%A1%B5.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo-min.png" class="logo__image only-light" alt="金融大数据 - Home"/>
+    <script>document.write(`<img src="../_static/logo-min.png" class="logo__image only-dark" alt="金融大数据 - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../%E9%A6%96%E9%A1%B5.html">
+                    课程首页
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/2_Python编程基础/2.5 数据结构.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>数据结构</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">（一）列表</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append">练习：append()方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">练习：创建一个列表</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">（二）元祖</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">练习: 元祖的不变特性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">（三）字典</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">练习：创建字典</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">练习：创建一个字典</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">练习答案</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">练习答案：创建一个列表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">练习答案：创建一个字典</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>数据结构<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<section id="id2">
+<h2>（一）列表<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>列表（List）是python语言编程使用最多的一种数据结构。<br />
+它是一种<strong>有序</strong>的集合，可以随时添加和删除其中的元素。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mf">3.2</span><span class="p">,</span> <span class="s1">&#39;苹果&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>列表是一个可变的有序表，所以，可以往列表中追加元素到末尾：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;香蕉&#39;</span><span class="p">)</span>
+<span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 3.2, &#39;苹果&#39;, &#39;香蕉&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>要删除指定位置的元素，用<code class="docutils literal notranslate"><span class="pre">pop(i)</span></code>方法，其中<code class="docutils literal notranslate"><span class="pre">i</span></code>是索引位置：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, &#39;苹果&#39;, &#39;香蕉&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>要把某个元素替换成别的元素，可以直接赋值给对应的索引位置：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.9</span>
+<span class="n">l</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, 1.9, &#39;香蕉&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>列表中的元素的索引位置是从0开始，直到列表的长度-1结束。</p>
+<p>列表元素也可以是另一个列表，比如：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;苹果&#39;</span><span class="p">,</span> <span class="s1">&#39;香蕉&#39;</span><span class="p">]]</span>  <span class="c1">#这种称之为嵌套</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
+</div>
+<p>如果一个列表中一个元素也没有，就是一个空的列表，它的长度为0：</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>列表的常用方法</strong></p>
+<p>列表支持以下方法：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>语法</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>L.append(x)</p></td>
+<td><p>将元素x追加到列表L的尾部</p></td>
+</tr>
+<tr class="row-odd"><td><p>L.count(x)</p></td>
+<td><p>返回元素x在列表L中出现的次数</p></td>
+</tr>
+<tr class="row-even"><td><p>L.extend(m)</p></td>
+<td><p>将列表m的项追加到L的结尾处，操作符+=完成同样的功能</p></td>
+</tr>
+<tr class="row-odd"><td><p>L.index(x, start, end)</p></td>
+<td><p>返回元素x在列表L中(或L的start:end分片中)最左边出现的索引位置，否则会产生一个ValueError异常</p></td>
+</tr>
+<tr class="row-even"><td><p>L.insert(i, x)</p></td>
+<td><p>在索引位置i处将元素x插入列表L</p></td>
+</tr>
+<tr class="row-odd"><td><p>L.pop()</p></td>
+<td><p>返回并移除list L最右边的元素</p></td>
+</tr>
+<tr class="row-even"><td><p>L.pop(i)</p></td>
+<td><p>返回并移除L中索引位置int i处的元素</p></td>
+</tr>
+<tr class="row-odd"><td><p>L.remove(x)</p></td>
+<td><p>从list L中移除最左边出现的元素x，如果找不到x就产生ValueError异常</p></td>
+</tr>
+</tbody>
+</table>
+<section id="append">
+<h3>练习：append()方法<a class="headerlink" href="#append" title="Link to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>创建一个列表包含元素：’100’和’hoffman’, 然后在列表后面追加一个新元素70。</p></li>
+<li><p>计算上述列表的长度</p></li>
+</ol>
+</section>
+<section id="id3">
+<h3>练习：创建一个列表<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>请创建一个列表变量，名字叫college，包含以下元素：”外语学院”，”国际交流学院”，”教育学院”，”传媒学院”</p></li>
+<li><p>使用print语句输出上述列表</p></li>
+<li><p>使用append语句在该列表后追加一个新的元素：”商学院”</p></li>
+</ul>
+<p>提示：在调试代码过程中，如果出现语句错误，如“SyntaxError: invalid character in identifier”，讲中文逗号”，”改成英文逗号”,” 。</p>
+</section>
+</section>
+<section id="id4">
+<h2>（二）元祖<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>另一种有序列表叫元组：tuple。</p>
+<blockquote>
+<div><p>这个单词怎么读呢？ Python之父吉多·范罗苏姆在 <a class="reference external" href="https://twitter.com/gvanrossum/status/86144775731941376">Twitter</a> 上说：“ 每周的一三五我会把 tuple 念作 <strong>too-pull</strong>，而二四六我喜欢念作 <strong>tub-pull</strong>。至于礼拜天嘛，我从不会讨论这些。:)”</p>
+<p>引自《Python语言及其应用》</p>
+</div></blockquote>
+<p>元祖和列表非常类似，但是tuple一旦初始化就不能修改，比如：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mf">1.9</span><span class="p">,</span>  <span class="s1">&#39;香蕉&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="c1"># 看看它的类型</span>
+</pre></div>
+</div>
+<p>现在，这个元祖不能变了，它也没有append()，insert()这样的方法。其他获取元素的方法和列表是一样的，你可以正常地使用<code class="docutils literal notranslate"><span class="pre">t[0]</span></code>，<code class="docutils literal notranslate"><span class="pre">train[-1]</span></code>，但不能赋值成另外的元素。
+通常我们使用元祖来存储一些无法被修改的安全信息。</p>
+<section id="id5">
+<h3>练习: 元祖的不变特性<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<p>创建一个元祖变量名称为account_info, 其中包含两个元素’John’, ‘123456’，<br />
+然后尝试令account_info[1] = ‘654321’。</p>
+</section>
+</section>
+<section id="id6">
+<h2>（三）字典<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>我们要学习的第三个数据结构是字典（dict）全称dictionary。它是Python中唯一的映射类型的数据结构。</p>
+<p>举个例子，假设要根据同学的名字查找对应的成绩，如果用列表实现，需要两个列表：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Michael&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Tracy&#39;</span><span class="p">]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[</span><span class="mi">95</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>给定一个名字，要查找对应的成绩，就先要在names中找到对应的位置，再从scores取出对应的成绩，列表越长，耗时越长。</p>
+<p>如果用字典实现，只需要一个“名字”-“成绩”的对照表，直接根据名字查找成绩，无论这个表有多大，查找速度都不会变慢。用Python写一个字典如下：</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Michael&#39;</span><span class="p">:</span> <span class="mi">95</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">:</span> <span class="mi">75</span><span class="p">,</span> <span class="s1">&#39;Tracy&#39;</span><span class="p">:</span> <span class="mi">85</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;Michael&#39;</span><span class="p">]</span>
+<span class="go">95</span>
+</pre></div>
+</div>
+<p>请务必注意，字典内部存放的顺序和键放入的顺序是没有关系的。</p>
+<p>和列表比较，字典有以下几个特点：</p>
+<ol class="arabic simple">
+<li><p>查找和插入的速度极快，不会随着key的增加而变慢；</p></li>
+<li><p>需要占用大量的内存，内存浪费多。</p></li>
+</ol>
+<p>而列表相反：</p>
+<ol class="arabic simple">
+<li><p>查找和插入的时间随着元素的增加而增加；</p></li>
+<li><p>占用空间小，浪费内存很少。</p></li>
+</ol>
+<p>所以，字典是用空间来换取时间的一种方法。</p>
+<p>字典可以用在需要高速查找的很多地方，在Python代码中几乎无处不在，正确使用字典非常重要，需要牢记的第一条就是字典的key必须是<strong>不可变对象</strong>。</p>
+<p>字典有如下方法：</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>语法</p></th>
+<th class="head"><p>描述</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>d.keys()</p></td>
+<td><p>返回字典d中所有键的视图</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.values()</p></td>
+<td><p>返回字典d中所有值的视图</p></td>
+</tr>
+<tr class="row-even"><td><p>d.items()</p></td>
+<td><p>返回字典d中所有(key, value)对的视图</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.get(k)</p></td>
+<td><p>返回键k相关联的值，如果k不在字典d中就返回None</p></td>
+</tr>
+<tr class="row-even"><td><p>d.get(k, v)</p></td>
+<td><p>返回键k相关联的值，如果k不在字典d中就返回v</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.pop(k)</p></td>
+<td><p>返回键k相关联的值，并移除键为k的项，如果k不包含在d中就产生KeyError异常</p></td>
+</tr>
+<tr class="row-even"><td><p>d.pop(k, v)</p></td>
+<td><p>返回键k相关联的值，并移除键为k的项，如果k不包含在d中就返回v</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.popitem()</p></td>
+<td><p>返回并移除字典d中一个任意的(key, value)对，如果d为空就产 生KeyError异常</p></td>
+</tr>
+<tr class="row-even"><td><p>d.clear()</p></td>
+<td><p>从字典d中移除所有项</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.fromkeys(s, v)</p></td>
+<td><p>返回一个dict，该字典的键为序列s中的项，值为None或v(如果给定 了参数v)</p></td>
+</tr>
+<tr class="row-even"><td><p>d.setdefault(k, v)</p></td>
+<td><p>与dict.get()方法一样，不同之处在于，如果k没有包含在字典d中 就插入一个键为k的新项，其值为None或v(如果给定了参数v)</p></td>
+</tr>
+<tr class="row-odd"><td><p>d.update(a)</p></td>
+<td><p>将a中每个尚未包含在字典d中的(key, value)对添加到d，对同时 包含在d与a中的每个键，使用a中对应的值替换d中对应的值——a可以是 字典，也可以是(key, value)对的一个iterable，或关键字参数</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id7">
+<h3>练习：创建字典<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>创建一个字典变量，名为student_info, 包含三个键-值对：</p>
+<ul class="simple">
+<li><p>‘name’: ‘John’</p></li>
+<li><p>‘age’: 21</p></li>
+<li><p>‘major’:’math’</p></li>
+</ul>
+</section>
+<section id="id8">
+<h3>练习：创建一个字典<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>使用字典创建一个变量，变量名为account_info，包含账户名：”user_01”，和密码”123456”，然后打印变量。</p></li>
+<li><p>给上面这个字典变量，添加一个新的键-值对，键为“user_02”,值为“654321”。</p></li>
+</ul>
+</section>
+</section>
+<section id="id9">
+<h2>练习答案<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<section id="id10">
+<h3>练习答案：创建一个列表<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">college</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;外语学院&quot;</span><span class="p">,</span> <span class="s2">&quot;国际交流学院&quot;</span><span class="p">,</span> <span class="s2">&quot;教育学院&quot;</span><span class="p">,</span> <span class="s2">&quot;传媒学院&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">college</span><span class="p">)</span>
+<span class="n">college</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;商学院&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id11">
+<h3>练习答案：创建一个字典<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">account_info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;user_01&#39;</span><span class="p">,</span> <span class="s1">&#39;123456&#39;</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;account_name:&#39;</span><span class="p">,</span> <span class="n">account_info</span><span class="p">[</span><span class="s1">&#39;user_01&#39;</span><span class="p">])</span>
+<span class="n">account_info</span><span class="p">[</span><span class="s1">&#39;user_02&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;654321&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;account_name:&#39;</span><span class="p">,</span> <span class="n">account_info</span><span class="p">[</span><span class="s1">&#39;user_02&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./2_Python编程基础"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">（一）列表</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#append">练习：append()方法</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">练习：创建一个列表</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">（二）元祖</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">练习: 元祖的不变特性</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">（三）字典</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">练习：创建字典</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">练习：创建一个字典</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">练习答案</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">练习答案：创建一个列表</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">练习答案：创建一个字典</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By CXH
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
