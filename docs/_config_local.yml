@@ -1,0 +1,14 @@
+title: 金融大数据
+author: CXH
+logo: logo-min.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: False
+
+parse:
+  myst_enable_extensions:
+    - html_image
+    - dollarmath
+    - colon_fence
