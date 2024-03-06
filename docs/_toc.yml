@@ -3,16 +3,23 @@
 
 format: jb-book
 root: intro
-parts:
-- caption: Basic examples 🪄
-  chapters:
-  - file: markdown
-  - file: notebooks
-  - file: markdown-notebooks
-- caption: Cool extensions 🕶️
-  chapters:
-  - file: intersphinx
-  - file: sphinx-examples
-  - file: sphinx-hoverxref
-  - file: sphinx-proof
+# parts:
+# - caption: Basic examples 🪄
+#   chapters:
+#   - file: markdown
+#   - file: notebooks
+#   - file: markdown-notebooks
+# - caption: Cool extensions 🕶️
+#   chapters:
+#   - file: intersphinx
+#   - file: sphinx-examples
+#   - file: sphinx-hoverxref
+#   - file: sphinx-proof
 
+chapters:
+- file: 1_导论/index.ipynb
+  sections:
+    - file: 1_导论/1.1_大数据的背景.ipynb
+    - file: 1_导论/1.2_金融大数据的应用场景.ipynb
+    - file: 1_导论/1.3_道德与法律.ipynb
+    - file: 1_导论/作业.ipynb
