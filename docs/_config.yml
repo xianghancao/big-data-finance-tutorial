@@ -2,15 +2,21 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 # Comprehensive example: https://github.com/executablebooks/jupyter-book/blob/master/docs/_config.yml
 
-title: Example Jupyter Book for Read the Docs
-author: Read the Docs team
-logo: logo.png
+title: 金融大数据
+author: CXH
+logo: logo-min.png
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: force
+  execute_notebooks: False
 
+parse:
+  myst_enable_extensions:
+    - html_image
+    - dollarmath
+    - colon_fence
+    
 # Define the name of the latex output file for PDF builds
 latex:
   latex_documents:
@@ -29,8 +35,8 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
-  use_issues_button: true
-  use_repository_button: true
+  use_issues_button: False
+  use_repository_button: False
 
 sphinx:
   config:
