@@ -20,8 +20,8 @@ root: intro
 #     - file: 1_导论/1.2_金融大数据的应用场景.ipynb
 #     - file: 1_导论/1.3_道德与法律.ipynb
 #     - file: 1_导论/作业.ipynb
-
-- file: 1_导论/1.1_大数据的背景.ipynb
+chapters:
+  - file: 1_导论/1.1_大数据的背景.ipynb
 # parts:
 # - caption: 第1章 导论
 #   chapters:
