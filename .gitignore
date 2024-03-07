@@ -158,4 +158,5 @@ cython_debug/
 
 *.DS_Store
 *.swp
-_build/
+/docs/conf.py
+/docs/_build
