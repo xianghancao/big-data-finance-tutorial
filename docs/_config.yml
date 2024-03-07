@@ -18,9 +18,9 @@ parse:
     - colon_fence
     
 # Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: big-data-finance-tutorial.tex
+# latex:
+#   latex_documents:
+#     targetname: big-data-finance-tutorial.tex
 
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
@@ -64,13 +64,13 @@ sphinx:
         - null
     hoverxref_intersphinx:
      - "sphinxproof"
-    mathjax3_config:
-      tex:
-        macros:
-          "N": "\\mathbb{N}"
-          "floor": ["\\lfloor#1\\rfloor", 1]
-          "bmat": ["\\left[\\begin{array}"]
-          "emat": ["\\end{array}\\right]"]
+    # mathjax3_config:
+    #   tex:
+    #     macros:
+    #       "N": "\\mathbb{N}"
+    #       "floor": ["\\lfloor#1\\rfloor", 1]
+    #       "bmat": ["\\left[\\begin{array}"]
+    #       "emat": ["\\end{array}\\right]"]
         
   extra_extensions:
     - sphinx.ext.intersphinx
