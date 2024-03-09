@@ -47,5 +47,12 @@ parts:
   - file: 2_Python编程基础/附录—函数的参数.ipynb
   - file: 2_Python编程基础/附录—更高效得编程.ipynb
 
-  
+- caption: 第3章 NumPy科学计算
+  chapters:
+  - file: 3_NumPy科学计算/3.1_NumPy介绍.ipynb
+  - file: 3_NumPy科学计算/3.2_NumPy的一维数组.ipynb
+  - file: 3_NumPy科学计算/3.3_NumPy的应用——音频图像和语言数据.ipynb
+  - file: 3_NumPy科学计算/作业
+  - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
+  - file: 3_NumPy科学计算/附录—NumPy的二维数组.ipynb
   
