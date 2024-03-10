@@ -56,7 +56,7 @@ parts:
   - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
   - file: 3_NumPy科学计算/附录—NumPy的二维数组.ipynb
   
-- caption: 4_Pandas数据分析
+- caption: 第4章 Pandas数据分析
   chapters:
   - file: 4_Pandas数据分析/4.1 Pandas介绍.ipynb
   - file: 4_Pandas数据分析/4.2 Pandas的数据框.ipynb
