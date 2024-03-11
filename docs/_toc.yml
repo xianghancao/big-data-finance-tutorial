@@ -41,25 +41,25 @@ parts:
   - file: 2_Python编程基础/2.8_函数.ipynb
   - file: 2_Python编程基础/2.9_模块和包.ipynb
   - file: 2_Python编程基础/附录—面向对象编程.ipynb
-  - file: 2_Python编程基础/作业.ipynb
   - file: 2_Python编程基础/附录—输入输出.ipynb
   - file: 2_Python编程基础/附录—缩进和注释.ipynb
   - file: 2_Python编程基础/附录—函数的参数.ipynb
   - file: 2_Python编程基础/附录—更高效得编程.ipynb
+  - file: 2_Python编程基础/作业.ipynb
 
 - caption: 第3章 NumPy科学计算
   chapters:
   - file: 3_NumPy科学计算/3.1_NumPy介绍.ipynb
   - file: 3_NumPy科学计算/3.2_NumPy的一维数组.ipynb
   - file: 3_NumPy科学计算/3.3_NumPy的应用——音频图像和语言数据.ipynb
-  - file: 3_NumPy科学计算/作业
   - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
   - file: 3_NumPy科学计算/附录—NumPy的二维数组.ipynb
-  
+  - file: 3_NumPy科学计算/作业
+
 - caption: 第4章 Pandas数据分析
   chapters:
   - file: 4_Pandas数据分析/4.1 Pandas介绍.ipynb
   - file: 4_Pandas数据分析/4.2 Pandas的数据框.ipynb
   - file: 4_Pandas数据分析/4.3 描述性统计方法.ipynb
-  - file: 4_Pandas数据分析/作业
   - file: 4_Pandas数据分析/附录—Series.ipynb
+  - file: 4_Pandas数据分析/作业
