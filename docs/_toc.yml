@@ -40,10 +40,11 @@ parts:
   - file: 2_Python编程基础/2.7_循环语句.ipynb
   - file: 2_Python编程基础/2.8_函数.ipynb
   - file: 2_Python编程基础/2.9_模块和包.ipynb
-  - file: 2_Python编程基础/附录—面向对象编程.ipynb
+  - file: 2_Python编程基础/2.10_面向对象编程.ipynb
   - file: 2_Python编程基础/附录—输入输出.ipynb
   - file: 2_Python编程基础/附录—缩进和注释.ipynb
   - file: 2_Python编程基础/附录—函数的参数.ipynb
+  - file: 2_Python编程基础/附录—继承和多态.ipynb
   - file: 2_Python编程基础/附录—更高效得编程.ipynb
   - file: 2_Python编程基础/作业.ipynb
 
