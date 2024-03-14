@@ -9,9 +9,10 @@ build:
     pre_build:
       # Generate on-the-fly Sphinx configuration from Jupyter Book's _config.yml
       - "jupyter-book config sphinx docs/"
-      - "zip -q -r docs/zips/2_Python编程基础.zip  docs/2_Python编程基础"
-      - "zip -q -r docs/zips/3_NumPy科学计算.zip docs/3_NumPy科学计算"
-
+      - "mkdir docs/_build/html/zips/" 
+      - "zip -q -r docs/_build/html/zips/2_Python编程基础.zip  docs/2_Python编程基础"
+      - "zip -q -r docs/_build/html/zips/3_NumPy科学计算.zip docs/3_NumPy科学计算"
+      
 python:
    install:
    - requirements: docs/requirements.txt
