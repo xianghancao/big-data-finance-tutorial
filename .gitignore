@@ -145,3 +145,4 @@ cython_debug/
 
 编译.ipynb
 .DS_Store
+_build/
