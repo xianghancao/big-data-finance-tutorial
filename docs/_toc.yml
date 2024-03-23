@@ -1,5 +1,5 @@
 format: jb-book
-root: intro
+root: 0_首页/intro
 # parts:
 # - caption: Basic examples 🪄
 #   chapters:
@@ -53,7 +53,7 @@ parts:
   chapters:
   - file: 3_NumPy科学计算/3.1_NumPy介绍.ipynb
   - file: 3_NumPy科学计算/3.2_NumPy的一维数组.ipynb
-  - file: 3_NumPy科学计算/3.3_NumPy的应用——音频图像和语言数据.ipynb
+  - file: 3_NumPy科学计算/3.3_NumPy的应用——金融价格序列
   - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
   - file: 3_NumPy科学计算/附录—NumPy的二维数组.ipynb
   - file: 3_NumPy科学计算/作业
