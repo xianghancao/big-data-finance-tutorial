@@ -1,5 +1,5 @@
 format: jb-book
-root: 0_首页/intro
+root: intro
 # parts:
 # - caption: Basic examples 🪄
 #   chapters:
