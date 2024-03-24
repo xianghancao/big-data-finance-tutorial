@@ -6,6 +6,7 @@ title: 金融大数据
 author: CXH
 logo: logo-min.png
 
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
@@ -40,6 +41,7 @@ html:
 
 sphinx:
   config:
+    language: zh
     intersphinx_mapping:
       ebp:
         - "https://executablebooks.org/en/latest/"

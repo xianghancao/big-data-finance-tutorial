@@ -1,36 +1,15 @@
 format: jb-book
 root: intro
-# parts:
-# - caption: Basic examples 🪄
-#   chapters:
-#   - file: markdown
-#   - file: notebooks
-#   - file: markdown-notebooks
-# - caption: Cool extensions 🕶️
-#   chapters:
-#   - file: intersphinx
-#   - file: sphinx-examples
-#   - file: sphinx-hoverxref
-#   - file: sphinx-proof
+chapters:
+- file: 1_导论/1.0_预备
+  sections:
+  - file: 1_导论/1.1_大数据的背景
+  - file: 1_导论/1.2_金融大数据的应用场景
+  - file: 1_导论/1.3_道德与法律
+  - file: 1_导论/作业
 
-# chapters:
-# - file: 1_导论/index.ipynb
-#   sections:
-#     - file: 1_导论/1.1_大数据的背景.ipynb
-#     - file: 1_导论/1.2_金融大数据的应用场景.ipynb
-#     - file: 1_导论/1.3_道德与法律.ipynb
-#     - file: 1_导论/作业.ipynb
-
-parts:
-- caption: 第1章 导论
-  chapters:
-  - file: 1_导论/1.1_大数据的背景.ipynb
-  - file: 1_导论/1.2_金融大数据的应用场景.ipynb
-  - file: 1_导论/1.3_道德与法律.ipynb
-  - file: 1_导论/作业.ipynb
-
-- caption: 第2章 Python编程基础
-  chapters:
+- file: 2_Python编程基础/2.0_预备
+  sections:
   - file: 2_Python编程基础/2.1_Python介绍与安装.ipynb
   - file: 2_Python编程基础/附录—Jupyter安装与启动.ipynb
   - file: 2_Python编程基础/2.2_关键字与标识符.ipynb
@@ -49,29 +28,37 @@ parts:
   - file: 2_Python编程基础/附录—更高效得编程.ipynb
   - file: 2_Python编程基础/作业.ipynb
 
-- caption: 第3章 NumPy科学计算
-  chapters:
-  - file: 3_NumPy科学计算/3.1_NumPy介绍.ipynb
-  - file: 3_NumPy科学计算/3.2_NumPy的一维数组.ipynb
+- file: 3_NumPy科学计算/3.0_预备
+  sections:
+  - file: 3_NumPy科学计算/3.1_NumPy介绍
+  - file: 3_NumPy科学计算/3.2_NumPy的一维数组
   - file: 3_NumPy科学计算/3.3_NumPy的应用——金融价格序列
-  - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
-  - file: 3_NumPy科学计算/附录—NumPy的二维数组.ipynb
+  - file: 3_NumPy科学计算/附录—help以及文档帮助
+  - file: 3_NumPy科学计算/附录—NumPy的二维数组
+  - file: 3_NumPy科学计算/附录—NumPy的应用——音频数据
+  - file: 3_NumPy科学计算/附录—NumPy的应用——图像数据
+  - file: 3_NumPy科学计算/附录—NumPy的应用——自然语言
   - file: 3_NumPy科学计算/作业
 
-- caption: 第4章 Pandas数据分析
-  chapters:
-  - file: 4_Pandas数据分析/4.1_Pandas介绍.ipynb
-  - file: 4_Pandas数据分析/4.2_Pandas的数据框.ipynb
-  - file: 4_Pandas数据分析/4.3_描述性统计方法.ipynb
-  - file: 4_Pandas数据分析/附录—Series.ipynb
+
+- file: 4_Pandas数据分析/4.0_预备
+  sections:
+  - file: 4_Pandas数据分析/4.1_Pandas介绍
+  - file: 4_Pandas数据分析/4.2_Pandas的数据框
+  - file: 4_Pandas数据分析/4.3_描述性统计方法
+  - file: 4_Pandas数据分析/附录—Series
   - file: 4_Pandas数据分析/作业
-  
-- caption: 第5章 金融数据可视化
-  chapters:
-  - file: 5_金融数据可视化/5.1_可视化入门.ipynb
-  - file: 5_金融数据可视化/5.2_matplotlib数据可视化.ipynb
-  - file: 5_金融数据可视化/5.3_matplotlib绘制多种图表.ipynb
-  # - file: 5_金融数据可视化/5.4_matplotlib数据可视化.ipynb
-  # - file: 5_金融数据可视化/5.5_matplotlib绘制多种图表.ipynb
-  - file: 5_金融数据可视化/附录—中文无法正常显示的问题.ipynb
-  #- file: 5_金融数据可视化/作业
+
+- file: 5_金融数据可视化/5.0_预备
+  sections:
+  - file: 5_金融数据可视化/5.1_可视化入门
+  - file: 5_金融数据可视化/5.2_matplotlib数据可视化
+  - file: 5_金融数据可视化/5.3_matplotlib绘制多种图表
+  - file: 5_金融数据可视化/附录—中文无法正常显示的问题
+
+
+- file: 6_金融数据的获取/6.0_预备
+  sections:
+  - file: 6_金融数据的获取/6.1_金融数据的历史
+  - file: 6_金融数据的获取/6.2_市场价格数据
+  - file: 6_金融数据的获取/6.3_财经新闻数据
