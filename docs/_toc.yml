@@ -32,12 +32,12 @@ chapters:
   sections:
   - file: 3_NumPy科学计算/3.1_NumPy介绍
   - file: 3_NumPy科学计算/3.2_NumPy的一维数组
-  - file: 3_NumPy科学计算/3.3_NumPy的应用——金融价格序列
+  - file: 3_NumPy科学计算/3.3—NumPy的二维数组
+  - file: 3_NumPy科学计算/3.4_NumPy的应用—金融价格序列
+  - file: 3_NumPy科学计算/NumPy的应用—音频数据
+  - file: 3_NumPy科学计算/NumPy的应用—图像数据
+  - file: 3_NumPy科学计算/NumPy的应用—自然语言
   - file: 3_NumPy科学计算/附录—help以及文档帮助
-  - file: 3_NumPy科学计算/附录—NumPy的二维数组
-  - file: 3_NumPy科学计算/附录—NumPy的应用——音频数据
-  - file: 3_NumPy科学计算/附录—NumPy的应用——图像数据
-  - file: 3_NumPy科学计算/附录—NumPy的应用——自然语言
   - file: 3_NumPy科学计算/作业
 
 
@@ -46,6 +46,7 @@ chapters:
   - file: 4_Pandas数据分析/4.1_Pandas介绍
   - file: 4_Pandas数据分析/4.2_Pandas的数据框
   - file: 4_Pandas数据分析/4.3_描述性统计方法
+  - file: 4_Pandas数据分析/4.4_Pandas的应用—金融价格数据分析
   - file: 4_Pandas数据分析/附录—Series
   - file: 4_Pandas数据分析/作业
 
