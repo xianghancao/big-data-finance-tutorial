@@ -47,6 +47,7 @@ chapters:
   - file: 4_Pandas数据分析/4.2_Pandas的数据框
   - file: 4_Pandas数据分析/4.3_描述性统计方法
   - file: 4_Pandas数据分析/4.4_Pandas的应用—技术指标分析
+  - file: 4_Pandas数据分析/附录—CSV文件编码问题
   - file: 4_Pandas数据分析/附录—Series
   - file: 4_Pandas数据分析/作业
 
