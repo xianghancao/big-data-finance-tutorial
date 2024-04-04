@@ -59,6 +59,7 @@ chapters:
   - file: 5_金融数据可视化/附录—matplotlib绘制多种图表.ipynb
   #- file: 5_金融数据可视化/附录—应用ipywidgets交互式可视化
   - file: 5_金融数据可视化/附录—中文无法正常显示的问题
+  - file: 5_金融数据可视化/作业
 
 
 - file: 6_金融数据的获取/6.0_预备
