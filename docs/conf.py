@@ -6,7 +6,7 @@
 author = 'CXH'
 bibtex_bibfiles = ['references.bib']
 comments_config = {'hypothesis': False, 'utterances': False}
-copyright = '2023'
+copyright = '2024'
 exclude_patterns = ['**.ipynb_checkpoints', '.DS_Store', 'Thumbs.db', '_build']
 extensions = ['sphinx_togglebutton', 'sphinx_copybutton', 'myst_nb', 'jupyter_book', 'sphinx_thebe', 'sphinx_comments', 'sphinx_external_toc', 'sphinx.ext.intersphinx', 'sphinx_design', 'sphinx_book_theme', 'sphinx_inline_tabs', 'sphinx_proof', 'sphinx_examples', 'hoverxref.extension', 'sphinxcontrib.bibtex', 'sphinx_jupyterbook_latex', 'sphinx_multitoc_numbering']
 external_toc_exclude_missing = False
@@ -14,7 +14,7 @@ external_toc_path = '_toc.yml'
 hoverxref_intersphinx = ['sphinxproof']
 html_baseurl = ''
 html_favicon = ''
-html_logo = 'logo-min.png'
+html_logo = 'Logo2.png'
 html_sourcelink_suffix = ''
 html_theme = 'sphinx_book_theme'
 html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons': {'notebook_interface': 'classic', 'binderhub_url': '', 'jupyterhub_url': '', 'thebe': False, 'colab_url': ''}, 'path_to_docs': 'docs', 'repository_url': 'https://github.com/xianghancao/big-data-finance-tutorial', 'repository_branch': 'main', 'extra_footer': '', 'home_page_in_toc': True, 'announcement': '', 'analytics': {'google_analytics_id': ''}, 'use_repository_button': False, 'use_edit_page_button': False, 'use_issues_button': False}
