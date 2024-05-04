@@ -7,7 +7,7 @@ chapters:
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
 
-- file: 2_Python编程基础/
+- file: 1_导论/1.0_预备
   sections:
   - file: 1_导论/1.1_大数据的背景
   - file: 1_导论/1.2_金融大数据的应用场景
