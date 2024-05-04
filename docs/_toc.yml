@@ -3,9 +3,9 @@ root: intro
 chapters:
 
 - file: 期中报告/期中报告
+- file: 期末报告/期末报告
 
-- file: 2_Python编程基础/附录—pip安装包工具
-- file: 2_Python编程基础/附录—Jupyter安装与启动
+
 
 - file: 1_导论/1.0_预备
   sections:
@@ -115,3 +115,9 @@ chapters:
   - file: 9_分类模型/9.2_分类模型的评估
   - file: 9_分类模型/9.3_分类模型的实现
   - file: 9_分类模型/案例—量化交易策略
+
+- file: 期末报告/附录—markdown语言
+- file: 期末报告/附录—使用LaTeX编辑数学公式
+
+- file: 2_Python编程基础/附录—pip安装包工具
+- file: 2_Python编程基础/附录—Jupyter安装与启动
