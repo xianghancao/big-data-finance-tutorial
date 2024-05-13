@@ -110,9 +110,8 @@ chapters:
   - file: 8_回归模型II/8.9_深度学习方法
   - file: 8_回归模型II/案例—股票收益率预测
   - file: 8_回归模型II/案例—股票收益率预测-LR
-  - file: 8_回归模型II/案例—股票收益率预测-LSTM
   - file: 8_回归模型II/案例—股票收益率预测-ARIMA
-
+  - file: 8_回归模型II/案例—股票收益率预测-RNN
 
 - file: 9_分类模型/9.0_预备
   sections:
