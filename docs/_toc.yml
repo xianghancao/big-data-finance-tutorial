@@ -141,7 +141,9 @@ chapters:
   - file: 11_自然语言处理/11.6_情感分析
   - file: 11_自然语言处理/案例—基于NLP和情感分析的交易策略
   - file: 11_自然语言处理/附录—NLP的Python库
+  - file: 11_自然语言处理/附录—中文情感分析
   - file: 11_自然语言处理/附录—词云图绘制
+  
 
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
