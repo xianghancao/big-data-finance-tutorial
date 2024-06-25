@@ -2,6 +2,9 @@ format: jb-book
 root: intro
 chapters:
 
+- file: 期中报告/期中报告
+- file: 期末报告/期末报告
+
 - file: 1_导论/1.0_预备
   sections:
   - file: 1_导论/1.1_大数据与AI
@@ -142,8 +145,6 @@ chapters:
   - file: 11_自然语言处理/附录—中文情感分析
   - file: 11_自然语言处理/附录—词云图绘制
   
-- file: 期中报告/期中报告
-- file: 期末报告/期末报告
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
 - file: 期末报告/附录—markdown语言
