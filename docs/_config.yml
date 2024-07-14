@@ -4,7 +4,7 @@
 
 title: 大数据金融
 author: 教学使用，CXH
-logo: Logo3-min.png
+logo: 首页/Logo3-min.png
 
 
 # Force re-execution of notebooks on each build.
@@ -24,8 +24,8 @@ parse:
 #     targetname: big-data-finance-tutorial.tex
 
 # Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
+# bibtex_bibfiles:
+#   - references.bib
 
 # Information about where the book exists on the web
 repository:
