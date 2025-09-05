@@ -147,6 +147,7 @@ chapters:
 - file: 关联规则算法/预备知识
   sections:
   - file: 关联规则算法/关联规则的概念
+  - file: 关联规则算法/关联规则的案例
 
 
 - file: 2_Python编程基础/附录—pip安装包工具
