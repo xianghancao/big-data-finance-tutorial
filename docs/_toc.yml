@@ -149,6 +149,9 @@ chapters:
   - file: 关联规则算法/关联规则的概念
   - file: 关联规则算法/关联规则的案例
 
+- file: 决策树/预备知识
+  sections:
+  - file: 决策树/决策树算法
 
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
