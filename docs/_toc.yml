@@ -152,6 +152,13 @@ chapters:
 - file: 决策树/预备知识
   sections:
   - file: 决策树/决策树算法
+  - file: 决策树/应用-个人信贷风险评估
+
+- file: 贝叶斯算法/预备知识
+  sections:
+  - file: 贝叶斯算法/贝叶斯算法原理与流程1
+  - file: 贝叶斯算法/贝叶斯算法原理与流程2
+  - file: 贝叶斯算法/贝叶斯算法原理与流程3
 
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
