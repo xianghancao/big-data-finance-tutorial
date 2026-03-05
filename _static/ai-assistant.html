@@ -1,52 +1,49 @@
 <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js"></script>
 
 <script>
-  // 确保 Jupyter Book 的网页主体元素完全加载后再渲染 AI，防止报错
   window.addEventListener('load', function() {
-    new CozeWebSDK.WebChatClient({
-      config: {
-        type: 'bot',
-        bot_id: '7613756909895974946', // 你的 Bot ID
-        isIframe: false,
-      },
-      auth: {
-        type: 'token',
-        // ⚠️ 请在这里填入你真实的 Token
-        token: 'pat_QawpYfRbtPev8RK3JtG0FonnmRutPC2lFlsm9sukIMJjK8G4P4ZTUtR5CUqxe8E9', 
-        // ⚠️ 当 Token 过期刷新时，也需要返回真实的 Token
-        onRefreshToken: async () => 'pat_QawpYfRbtPev8RK3JtG0FonnmRutPC2lFlsm9sukIMJjK8G4P4ZTUtR5CUqxe8E9' 
-      },
-      userInfo: {
-        id: 'reader',
-        // 读者默认头像
-        url: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/coze-logo.png',
-        nickname: '读者',
-      },
-      ui: {
-        base: {
-          // 这里可以换成你之前那个科技蓝色 Logo 的网络地址
-          icon: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
-          layout: 'pc',
-          lang: 'zh-CN', // 设置为中文
-          zIndex: 9999   // 调高层级，绝不被教程网页的原有元素遮挡
+    // 【关键修改 1】：延迟 1.5 秒加载，等网站自带的框架彻底渲染完毕后再出场
+    setTimeout(function() {
+      new CozeWebSDK.WebChatClient({
+        config: {
+          type: 'bot',
+          bot_id: '7613756909895974946', // 你的 Bot ID
+          isIframe: false,
         },
-        header: {
-          isShow: true,
-          isNeedClose: true,
+        auth: {
+          type: 'token',
+          // ⚠️ 别忘了把这里的 token 换回你真实的 pat_
+          token: '__COZE_TOKEN_PLACEHOLDER__', 
+          onRefreshToken: async () => '__COZE_TOKEN_PLACEHOLDER__' 
         },
-        asstBtn: {
-          isNeed: true // 开启右下角的悬浮小球
+        userInfo: {
+          id: 'reader',
+          url: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/coze-logo.png',
+          nickname: '读者',
         },
-        footer: {
-          isShow: true,
-          expressionText: 'Powered by 金融大数据教程',
+        ui: {
+          base: {
+            icon: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
+            layout: 'pc',
+            lang: 'zh-CN',
+            // 【关键修改 2】：使用浏览器的绝对最高层级，神挡杀神
+            zIndex: 2147483647 
+          },
+          header: { isShow: true, isNeedClose: true },
+          asstBtn: { isNeed: true },
+          footer: { isShow: true, expressionText: 'Powered by 金融大数据教程' },
+          chatBot: { title: '金融大数据 AI 助教', uploadable: false, width: 390 },
         },
-        chatBot: {
-          title: '金融大数据 AI 助教',
-          uploadable: false, // 如果不需要读者上传文件给你解析，可以关掉保持界面清爽
-          width: 390,
-        },
-      },
-    });
+      });
+    }, 1500); // 1500毫秒 = 1.5秒
   });
 </script>
+
+<style>
+  /* 【关键修改 3】：把按钮往上挪一点，防止和 Read the Docs 原生的右下角菜单重叠 */
+  .coze-chat-client-entry-btn {
+      bottom: 80px !important; 
+      right: 30px !important;
+      z-index: 2147483647 !important;
+  }
+</style>
