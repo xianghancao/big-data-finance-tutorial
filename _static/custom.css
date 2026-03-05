@@ -1,0 +1,12 @@
+/* 强制增加 Logo 高度并允许溢出或调整导航栏 */
+.sidebar-logo, .brand__logo {
+    height: 80px !important; /* 将默认的约 32px 撑大 */
+    max-height: 80px !important;
+    width: auto !important;
+    object-fit: contain;
+}
+
+/* 如果 Logo 太大挤占了文字，可以调整侧边栏顶部的内边距 */
+.sidebar-header {
+    padding: 20px 10px !important;
+}

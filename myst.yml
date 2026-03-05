@@ -1,0 +1,191 @@
+# See docs at: https://mystmd.org/guide/frontmatter
+version: 1
+site:
+  template: book-theme
+  options:
+    static:
+      - _static
+    logo: _static/logo.jpg
+    
+project:
+  id: efa72787-eab5-4000-9b9d-7ef01bfa03b0
+  title: 大数据金融(Big Data in Finance)
+  description: 这是一个关于金融大数据深度在线课程
+  keywords: [金融, 大数据, Python]
+  thumbnail: _static/logo.jpg     # 原图作为缩略图
+  # authors: []
+  # github:
+  # To autogenerate a Table of Contents, run "myst init --write-toc"
+  toc:
+    - file: 首页/intro.ipynb
+    - title: 导论
+      children:
+        - file: 1_导论/1.0_预备知识.ipynb
+        - file: 1_导论/1.1_大数据与AI.ipynb
+        - file: 1_导论/1.2_金融大数据的应用场景.ipynb
+        - file: 1_导论/1.3_道德与法律.ipynb
+        - file: 1_导论/作业.ipynb
+    - title: Python 编程基础
+      children:
+        - file: 2_Python编程基础/2.0_预备知识.ipynb
+        - file: 2_Python编程基础/2.1_Python介绍与安装.ipynb
+        - file: 2_Python编程基础/2.2_关键字与标识符.ipynb
+        - file: 2_Python编程基础/2.3_变量与赋值.ipynb
+        - file: 2_Python编程基础/2.4_数据类型.ipynb
+        - file: 2_Python编程基础/2.5_数据结构.ipynb
+        - file: 2_Python编程基础/2.6_判断语句.ipynb
+        - file: 2_Python编程基础/2.7_循环语句.ipynb
+        - file: 2_Python编程基础/2.8_函数.ipynb
+        - file: 2_Python编程基础/2.9_模块和包.ipynb
+        - file: 2_Python编程基础/2.10_面向对象编程.ipynb
+        - file: 2_Python编程基础/作业.ipynb
+        - file: 2_Python编程基础/附录—Jupyter安装与启动.ipynb
+        - file: 2_Python编程基础/附录—pip安装包工具.ipynb
+        - file: 2_Python编程基础/附录—函数的参数.ipynb
+        - file: 2_Python编程基础/附录—更高效得编程.ipynb
+        - file: 2_Python编程基础/附录—继承和多态.ipynb
+        - file: 2_Python编程基础/附录—缩进和注释.ipynb
+        - file: 2_Python编程基础/附录—输入输出.ipynb
+    - title: NumPy 科学计算
+      children:
+        - file: 3_NumPy科学计算/3.0_预备知识.ipynb
+        - file: 3_NumPy科学计算/3.1_NumPy介绍.ipynb
+        - file: 3_NumPy科学计算/3.2_NumPy的一维数组.ipynb
+        - file: 3_NumPy科学计算/3.3_NumPy的二维数组.ipynb
+        - file: 3_NumPy科学计算/3.4_NumPy的应用—计算股票价格收益率.ipynb
+        - file: 3_NumPy科学计算/NumPy的应用—图像数据.ipynb
+        - file: 3_NumPy科学计算/NumPy的应用—自然语言.ipynb
+        - file: 3_NumPy科学计算/NumPy的应用—音频数据.ipynb
+        - file: 3_NumPy科学计算/作业.ipynb
+        - file: 3_NumPy科学计算/附录—help以及文档帮助.ipynb
+    - title: Pandas 数据分析
+      children:
+        - file: 4_Pandas数据分析/4.0_预备知识.ipynb
+        - file: 4_Pandas数据分析/4.1_Pandas介绍.ipynb
+        - file: 4_Pandas数据分析/4.2_Pandas的数据框.ipynb
+        - file: 4_Pandas数据分析/4.3_描述性统计方法.ipynb
+        - file: 4_Pandas数据分析/4.4_Pandas的应用—技术指标分析.ipynb
+        - file: 4_Pandas数据分析/作业.ipynb
+        - file: 4_Pandas数据分析/附录—CSV文件编码问题.ipynb
+        - file: 4_Pandas数据分析/附录—Series.ipynb
+    - title: 金融数据可视化
+      children:
+        - file: 5_金融数据可视化/5.0_预备知识.ipynb
+        - file: 5_金融数据可视化/5.1_可视化入门.ipynb
+        - file: 5_金融数据可视化/5.2_matplotlib绘图流程.ipynb
+        - file: 5_金融数据可视化/5.3_matplotlib的绘图样式.ipynb
+        - file: 5_金融数据可视化/5.4_matplotlib的应用—有效前沿可视化.ipynb
+        - file: 5_金融数据可视化/作业.ipynb
+        - file: 5_金融数据可视化/附录—matplotlib绘制多个子图.ipynb
+        - file: 5_金融数据可视化/附录—matplotlib绘制多种图表.ipynb
+        - file: 5_金融数据可视化/附录—中文无法正常显示的问题.ipynb
+        - file: 5_金融数据可视化/附录—图片的多种文件格式.ipynb
+        - file: 5_金融数据可视化/附录—在jupyter中显示无损图形.ipynb
+        - file: 5_金融数据可视化/附录—应用ipywidgets交互式可视化.ipynb
+    - title: 金融数据的获取
+      children:
+        - file: 6_金融数据的获取/6.0_预备知识.ipynb
+        - file: 6_金融数据的获取/6.1_金融数据的历史.ipynb
+        - file: 6_金融数据的获取/6.2_金融数据的门类.ipynb
+        - file: 6_金融数据的获取/6.3_市场价格数据.ipynb
+        - file: 6_金融数据的获取/6.4_企业财务数据.ipynb
+        - file: 6_金融数据的获取/6.5_财经文本数据.ipynb
+        - file: 6_金融数据的获取/附录—数据供应商.ipynb
+    - title: 机器学习的理论
+      children:
+        - file: 7_机器学习的理论/7.0_预备知识.ipynb
+        - file: 7_机器学习的理论/7.1_什么是机器学习.ipynb
+        - file: 7_机器学习的理论/7.2_机器学习的类别.ipynb
+        - file: 7_机器学习的理论/7.3_深度学习与神经网络.ipynb
+        - file: 7_机器学习的理论/7.4_sklearn和keras.ipynb
+        - file: 7_机器学习的理论/附录-为什么当前是深度学习的时代.ipynb
+        - file: 7_机器学习的理论/附录-神经网络可视化.ipynb
+        - file: 7_机器学习的理论/附录-神经网络在MNIST数据集上的应用.ipynb
+        - file: 7_机器学习的理论/附录-训练集和测试集.ipynb
+    - title: 回归模型I
+      children:
+        - file: 8_回归模型I/8.0_预备知识.ipynb
+        - file: 8_回归模型I/8.1_相关系数.ipynb
+        - file: 8_回归模型I/8.2_一元线性回归.ipynb
+        - file: 8_回归模型I/8.3_多元线性回归.ipynb
+        - file: 8_回归模型I/8.4_模型评价.ipynb
+        - file: 8_回归模型I/8.5_线性回归的实现.ipynb
+        - file: 8_回归模型I/案例—Fama-French三因子模型的应用.ipynb
+        - file: 8_回归模型I/附录—一元线性回归的简单应用.ipynb
+    - title: 回归模型II
+      children:
+        - file: 8_回归模型II/8.0_预备知识.ipynb
+        - file: 8_回归模型II/8.6_时间序列分析.ipynb
+        - file: 8_回归模型II/8.7_时间序列的特性.ipynb
+        - file: 8_回归模型II/8.8_时间序列模型ARIMA.ipynb
+        - file: 8_回归模型II/8.9_深度学习方法.ipynb
+        - file: 8_回归模型II/案例—股票收益率预测-ARIMA.ipynb
+        - file: 8_回归模型II/案例—股票收益率预测.ipynb
+        - file: 8_回归模型II/案例—股票收益率预测-LR.ipynb
+        - file: 8_回归模型II/案例—股票收益率预测-RNN.ipynb
+    - title: 分类模型
+      children:
+        - file: 9_分类模型/9.0_预备知识.ipynb
+        - file: 9_分类模型/9.1_分类模型理论.ipynb
+        - file: 9_分类模型/9.2_分类模型的评估.ipynb
+        - file: 9_分类模型/9.3_分类模型的实现.ipynb
+        - file: 9_分类模型/案例—消费信贷逾期预测.ipynb
+        - file: 9_分类模型/案例—量化交易策略.ipynb
+    - title: 聚类模型
+      children:
+        - file: 10_聚类模型/10.0_预备知识.ipynb
+        - file: 10_聚类模型/10.1_聚类的理论.ipynb
+        - file: 10_聚类模型/10.2_K-means的实现.ipynb
+        - file: 10_聚类模型/案例—配对交易聚类.ipynb
+    - title: KNN & Kmeans
+      children:
+        - file: 11_KNN_Kmeans/11.0_预备知识.ipynb
+        - file: 11_KNN_Kmeans/11.1_K近邻算法.ipynb
+        - file: 11_KNN_Kmeans/11.2_K均值聚类算法.ipynb
+    - title: 自然语言处理
+      children:
+        - file: 11_自然语言处理/11.0_预备知识.ipynb
+        - file: 11_自然语言处理/11.1_分词.ipynb
+        - file: 11_自然语言处理/11.2_停用词去除.ipynb
+        - file: 11_自然语言处理/11.3_词干提取.ipynb
+        - file: 11_自然语言处理/11.4_词形还原.ipynb
+        - file: 11_自然语言处理/11.5_词性标注.ipynb
+        - file: 11_自然语言处理/11.6_情感分析.ipynb
+        - file: 11_自然语言处理/案例—基于NLP和情感分析的交易策略.ipynb
+        - file: 11_自然语言处理/附录—NLP的Python库.ipynb
+        - file: 11_自然语言处理/附录—中文情感分析.ipynb
+    - title: 贝叶斯算法
+      children:
+        - file: 贝叶斯算法/贝叶斯算法原理与流程1.ipynb
+        - file: 贝叶斯算法/贝叶斯算法原理与流程2.ipynb
+        - file: 贝叶斯算法/贝叶斯算法原理与流程3.ipynb
+        - file: 贝叶斯算法/预备知识.ipynb
+    - title: 神经网络算法
+      children:
+        - file: 13_神经网络算法/13.0_预备知识.ipynb
+    - title: 综合案例开发
+      children:
+        - file: 17_综合案例开发/17.0_预备知识.ipynb
+        - file: 17_综合案例开发/17.1_信用评分模型.ipynb
+    - title: 关联规则算法
+      children:
+        - file: 关联规则算法/关联规则的案例.ipynb
+        - file: 关联规则算法/关联规则的概念.ipynb
+        - file: 关联规则算法/预备知识.ipynb
+    - title: 决策树
+      children:
+        - file: 决策树/决策树算法.ipynb
+        - file: 决策树/应用-个人信贷风险评估.ipynb
+        - file: 决策树/预备知识.ipynb
+    - title: 期中报告
+      children:
+        - file: 期中报告/期中报告.ipynb
+        - file: 期中报告/附录—markdown语言.ipynb
+        - file: 期中报告/附录—使用LaTeX编辑数学公式.ipynb
+    - title: 期末报告
+      children:
+        - file: 期末报告/期末报告.ipynb
+        - file: 期末报告/附录—markdown语言.ipynb
+        - file: 期末报告/附录—使用LaTeX编辑数学公式.ipynb
+
+    

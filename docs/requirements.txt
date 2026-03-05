@@ -1,5 +1,0 @@
-jupyter-book
-sphinx-inline-tabs
-sphinx-examples
-sphinx-proof
-sphinx-hoverxref
