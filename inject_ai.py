@@ -1,6 +1,6 @@
 import os
 
-html_snippet_path = "ai-assistant.html"
+html_snippet_path = "_static/ai-assistant.html"
 build_dir = "_build/html"
 
 # 从系统的环境变量中获取真实 Token
