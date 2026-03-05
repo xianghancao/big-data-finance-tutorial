@@ -160,6 +160,19 @@ chapters:
   - file: 贝叶斯算法/贝叶斯算法原理与流程2
   - file: 贝叶斯算法/贝叶斯算法原理与流程3
 
+
+- file: 11_KNN_Kmeans/11.0_预备知识
+  sections:
+  - file: 11_KNN_Kmeans/11.1_K近邻算法
+  - file: 11_KNN_Kmeans/11.2_K均值聚类算法
+
+- file: 13_神经网络算法/13.0_预备知识
+
+- file: 17_综合案例开发/17.0_预备知识
+  sections: 
+  - file: 17_综合案例开发/17.1_信用评分模型
+  
+
 - file: 2_Python编程基础/附录—pip安装包工具
 - file: 2_Python编程基础/附录—Jupyter安装与启动
 - file: 期末报告/附录—markdown语言
