@@ -1,19 +1,18 @@
 version: 2
 
 build:
-  # 指定稳定的操作系统版本
   os: ubuntu-22.04
   tools:
-    # 强制锁定 Node.js v20，完美避开 v24 的编译报错！
     nodejs: "20"
   
-  # 使用 commands 完全接管构建，RTD 就不会再管你要 Sphinx 配置了
   commands:
-    # 1. 安装 MyST CLI
+    # 1. 安装 MyST 核心构建工具
     - npm install -g mystmd
-    # 2. 生成纯静态 HTML 网页
+    # 2. 生成网页文件（默认会生成到 _build/html）
     - myst build --html
     # 3. 创建 RTD 规定的输出目录
     - mkdir -p $READTHEDOCS_OUTPUT/html/
-    # 4. 把编译好的网页搬运到输出目录
-    - cp -r _build/html/* $READTHEDOCS_OUTPUT/html/
+    # 4. 【关键修改】将文件“移动”过去，而不是复制
+    - mv _build/html/* $READTHEDOCS_OUTPUT/html/
+    # 5. 【关键修改】彻底删除旧的 _build 目录，防止 RTD 扫描报警
+    - rm -rf _build
