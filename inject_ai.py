@@ -1,7 +1,7 @@
 # inject_ai.py
 import os
 
-html_snippet_path = "ai-assistant.html" # 如果你把它放进了 _static 文件夹，这里就写 "_static/ai-assistant.html"
+html_snippet_path = "_static/ai-assistant.html" # 如果你把它放进了 _static 文件夹，这里就写 "_static/ai-assistant.html"
 build_dir = "_build/html"
 
 with open(html_snippet_path, "r", encoding="utf-8") as f:
