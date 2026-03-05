@@ -1,20 +1,19 @@
 version: 2
 
 build:
-  os: ubuntu-lts-latest
+  # 指定稳定的操作系统版本
+  os: ubuntu-22.04
   tools:
-    # 关键点 1：声明需要 Node.js 环境，而不是纯 Python
-    nodejs: "latest"
-
-jobs:
-  install:
-    # 关键点 2：安装 mystmd（Jupyter Book 2 的底层核心工具）
+    # 强制锁定 Node.js v20，完美避开 v24 的编译报错！
+    nodejs: "20"
+  
+  # 使用 commands 完全接管构建，RTD 就不会再管你要 Sphinx 配置了
+  commands:
+    # 1. 安装 MyST CLI
     - npm install -g mystmd
-  build:
-    html:
-      # 关键点 3：使用 --html 参数构建出完全静态的网页文件
-      - myst build --html
-  post_build:
-    # 关键点 4：将 _build/html 里的产物拷贝到 RTD 指定的输出目录下
-    - mkdir --parents $READTHEDOCS_OUTPUT/html/
-    - cp --recursive _build/html/* $READTHEDOCS_OUTPUT/html/
+    # 2. 生成纯静态 HTML 网页
+    - myst build --html
+    # 3. 创建 RTD 规定的输出目录
+    - mkdir -p $READTHEDOCS_OUTPUT/html/
+    # 4. 把编译好的网页搬运到输出目录
+    - cp -r _build/html/* $READTHEDOCS_OUTPUT/html/
