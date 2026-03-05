@@ -1,49 +1,64 @@
-<script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js"></script>
-
 <script>
-  window.addEventListener('load', function() {
-    // 【关键修改 1】：延迟 1.5 秒加载，等网站自带的框架彻底渲染完毕后再出场
-    setTimeout(function() {
-      new CozeWebSDK.WebChatClient({
-        config: {
-          type: 'bot',
-          bot_id: '7613756909895974946', // 你的 Bot ID
-          isIframe: false,
-        },
-        auth: {
-          type: 'token',
-          // ⚠️ 别忘了把这里的 token 换回你真实的 pat_
-          token: '__COZE_TOKEN_PLACEHOLDER__', 
-          onRefreshToken: async () => '__COZE_TOKEN_PLACEHOLDER__' 
-        },
-        userInfo: {
-          id: 'reader',
-          url: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/coze-logo.png',
-          nickname: '读者',
-        },
-        ui: {
-          base: {
-            icon: 'https://lf-coze-web-cdn.coze.cn/obj/eden-cn/lm-lgvj/ljhwZthlaukjlkulzlp/coze/chatsdk-logo.png',
-            layout: 'pc',
-            lang: 'zh-CN',
-            // 【关键修改 2】：使用浏览器的绝对最高层级，神挡杀神
-            zIndex: 2147483647 
-          },
-          header: { isShow: true, isNeedClose: true },
-          asstBtn: { isNeed: true },
-          footer: { isShow: true, expressionText: 'Powered by 金融大数据教程' },
-          chatBot: { title: '金融大数据 AI 助教', uploadable: false, width: 390 },
-        },
-      });
-    }, 1500); // 1500毫秒 = 1.5秒
-  });
-</script>
+  (function() {
+    function initCozeAssistant() {
+      // 1. 如果已经加载过，防止重复出场
+      if (window.cozeHasBeenLoaded) return;
+      window.cozeHasBeenLoaded = true;
 
-<style>
-  /* 【关键修改 3】：把按钮往上挪一点，防止和 Read the Docs 原生的右下角菜单重叠 */
-  .coze-chat-client-entry-btn {
-      bottom: 80px !important; 
-      right: 30px !important;
-      z-index: 2147483647 !important;
-  }
-</style>
+      // 2. 动态创建官方的脚本标签，悄悄挂载到 React 管不到的 <head> 里
+      var script = document.createElement('script');
+      script.src = "https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js";
+      script.async = true;
+      
+      // 3. 等核心库下载完，立刻初始化你的机器人
+      script.onload = function() {
+        new window.CozeWebSDK.WebChatClient({
+          config: {
+            type: 'bot',
+            bot_id: '7613756909895974946', // 你的真实 Bot ID
+            isIframe: false,
+          },
+          auth: {
+            type: 'token',
+            // 这里的占位符不要动，云端的 Python 脚本会自动把它替换成环境变量里的真实 Token
+            token: '__COZE_TOKEN_PLACEHOLDER__',
+            onRefreshToken: async () => '__COZE_TOKEN_PLACEHOLDER__'
+          },
+          userInfo: {
+            id: 'reader',
+            nickname: '读者',
+          },
+          ui: {
+            base: { layout: 'pc', lang: 'zh-CN', zIndex: 2147483647 }, // 使用系统极限层级
+            header: { isShow: true, isNeedClose: true },
+            asstBtn: { isNeed: true },
+            footer: { isShow: true, expressionText: 'Powered by 金融大数据教程' },
+            chatBot: { title: '金融大数据 AI 助教', uploadable: false, width: 390 },
+          }
+        });
+
+        // 4. 暴力注入 CSS：强行把悬浮球往上挪，彻底避开 Read the Docs 右下角的原生菜单
+        var style = document.createElement('style');
+        style.innerHTML = `
+          .coze-chat-client-entry-btn {
+              bottom: 80px !important; 
+              right: 30px !important;
+              z-index: 2147483647 !important;
+          }
+        `;
+        document.head.appendChild(style);
+      };
+      
+      // 执行挂载
+      document.head.appendChild(script);
+    }
+
+    // 【最核心的战术：让子弹飞一会儿】
+    // 监听到网页整体加载完毕后，强行再等 2.5 秒 (2500毫秒)
+    // 留足充分的时间给底层 React 去折腾，等它“睡着”了，咱们再空降
+    window.addEventListener('load', function() {
+      setTimeout(initCozeAssistant, 2500); 
+    });
+
+  })();
+</script>
