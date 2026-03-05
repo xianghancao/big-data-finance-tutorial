@@ -1,0 +1,96 @@
+<div id="ai-widget-container">
+    <style>
+        /* 悬浮按钮样式（匹配你 Logo 的科技蓝） */
+        #ai-widget-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00B4DB, #0083B0);
+            box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        #ai-widget-btn:hover {
+            transform: scale(1.1);
+        }
+        /* 聊天窗口样式 */
+        #ai-chat-window {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 380px;
+            height: 550px;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            z-index: 9998;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+        #ai-chat-window.open {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #ai-chat-header {
+            background: linear-gradient(135deg, #00B4DB, #0083B0);
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #ai-chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        #ai-chat-iframe {
+            flex: 1;
+            border: none;
+            width: 100%;
+            background: #f9f9f9;
+        }
+    </style>
+
+    <div id="ai-chat-window">
+        <div id="ai-chat-header">
+            <span>🤖 金融大模型助手</span>
+            <button id="ai-chat-close">×</button>
+        </div>
+        <iframe id="ai-chat-iframe" src="https://example.com/your-ai-chat-link"></iframe>
+    </div>
+
+    <button id="ai-widget-btn">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2zM7.5 13A1.5 1.5 0 1 0 7.5 16 1.5 1.5 0 0 0 7.5 13zm9 0A1.5 1.5 0 1 0 16.5 16 1.5 1.5 0 0 0 16.5 13z"/>
+        </svg>
+    </button>
+
+    <script>
+        // 控制面板开关的简单逻辑
+        document.getElementById('ai-widget-btn').addEventListener('click', function() {
+            document.getElementById('ai-chat-window').classList.toggle('open');
+        });
+        document.getElementById('ai-chat-close').addEventListener('click', function() {
+            document.getElementById('ai-chat-window').classList.remove('open');
+        });
+    </script>
+</div>

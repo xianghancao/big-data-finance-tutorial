@@ -10,6 +10,8 @@ build:
     - npm install -g mystmd
     # 2. 生成网页文件（默认会生成到 _build/html）
     - myst build --html
+    # 【新增动作】网页生成后，立即运行注入脚本
+    - python3 inject_ai.py
     # 3. 创建 RTD 规定的输出目录
     - mkdir -p $READTHEDOCS_OUTPUT/html/
     # 4. 【关键修改】将文件“移动”过去，而不是复制
