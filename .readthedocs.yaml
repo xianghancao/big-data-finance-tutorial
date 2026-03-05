@@ -1,13 +1,20 @@
-version: "2"
+version: 2
 
 build:
-  os: "ubuntu-22.04"
+  os: ubuntu-lts-latest
   tools:
-    python: "3.10"
+    # 关键点 1：声明需要 Node.js 环境，而不是纯 Python
+    nodejs: "latest"
 
-python:
+jobs:
   install:
-    - requirements: docs/requirements.txt
-
-sphinx:
-  configuration: docs/conf.py
+    # 关键点 2：安装 mystmd（Jupyter Book 2 的底层核心工具）
+    - npm install -g mystmd
+  build:
+    html:
+      # 关键点 3：使用 --html 参数构建出完全静态的网页文件
+      - myst build --html
+  post_build:
+    # 关键点 4：将 _build/html 里的产物拷贝到 RTD 指定的输出目录下
+    - mkdir --parents $READTHEDOCS_OUTPUT/html/
+    - cp --recursive _build/html/* $READTHEDOCS_OUTPUT/html/
